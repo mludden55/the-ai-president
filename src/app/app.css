@@ -1,0 +1,143 @@
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;   /* ⭐ fixes overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background-image: url('assets/images/background_whitehouse.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.tabs {
+  display: flex;
+  gap: 28px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+  font-size: 18px;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Tab Links */
+.tabs a {
+  text-decoration: none;
+  color: #374151;
+  white-space: nowrap;
+  transition: 0.2s ease;
+  padding-bottom: 4px;
+}
+
+/* Hover */
+.tabs a:hover {
+  color: #2563eb;
+}
+
+/* Active Tab */
+.tabs a.active {
+  color: #1d4ed8;
+  font-weight: 700;
+  border-bottom: 3px solid #1d4ed8;
+}
+
+@media (max-width: 768px) {
+
+  .tabs {
+    flex-wrap: wrap;        /* allow wrapping */
+    gap: 12px;
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+
+  .tabs a {
+    flex: 1 1 45%;          /* two per row */
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    background: #f3f4f6;
+  }
+
+  .tabs a.active {
+    background: #1d4ed8;
+    color: white;
+    border-bottom: none;   /* remove desktop underline */
+  }
+}
+
+
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  border-radius: 12px;
+}
+
+.sub-menu {
+  font-size: 20px;
+  background: transparent;
+  color: #d11d95;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+}
+
+.common-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Centers child divs horizontally */
+    min-height: 65vh;
+    width: 100%;
+    padding: 20px;
+}
+
+
+
+.redTextItal {
+  color: red;
+  font-size: 14px;
+  font-style:italic;
+}
+
+.form-grid {
+  min-height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0px !important;
+}
+
+.form-label {
+  width: 150px;
+  font-weight: bold;
+  padding-top: 6px;
+}

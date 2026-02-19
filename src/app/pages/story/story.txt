@@ -1,0 +1,115 @@
+<strong>Sister: </strong>So, you are telling me that you could do a better job as President than all of those hopefuls out there that have dedicated their life to politics?
+
+
+<strong>Brother: </strong>Yes, it would be quite easy
+
+
+<strong>Sister: </strong>O.k. I'll bite, what is your plan?
+
+
+<strong>Brother: </strong>I would be the first AI president.
+
+<strong>Sister: </strong>The first AI president? O.k. I am intrigued. Give me your introductory speech.
+
+<strong>Brother: </strong>It would go something like this:
+Hello my fellow Americans, my name is John Q. Hopeful, and I want to be your first AI president.
+
+Let me start by saying that it is way to easy for AI to be used for bad intentions. Bad people can use it to do bad things.... and if elected president, I can assure you that I will use my powers of the government to protect the people as best I can.
+
+Having said that, AI gives us the ability to transform our society in a transcendental way.
+
+Let me give you and example of what I am talking about.
+
+I am going to try to simplify AI into something that most people can understand and then explain how I want to take advantage of this to help the citizens of our country share their needs and concerns with the government.
+
+Basically, you can ask AI questions and it takes all of the data it has collected and sorts through that data to give you the best answer.
+If you want a bit more detailed answer, In about 100 words, explain artificial intelligence in simple terms. Describe how AI uses existing data to find patterns and summarize general voter preferences, rather than making decisions about specific individuals.`,
+
+Here is what ChatGPT shared with me when I asked: <Link to pop-up bubble>.
+
+Let me give you another sample, ask AI "What percentage of the United States population agrees that gerrymandering should not be allowed".
+
+If you look at that answer, it is pretty obvious that a majority of citizens think gerrymandering should not be allowed.
+
+So, what I want to do is use AI to solve problems. If elected president, I will create a website where all registered voters can have a direct say in how this country is run.
+
+Sister: O.k. hold on, so you are going to create a website where all registered voters can have a say. How are you going to control XXX?
+
+Brother: Yeah, this is actually a tricky one. I hear a lot of noised out there regarding
+
+This leads me to the "Low Hanging Fruit Board".
+These are topics that everyone knows a majority supports are certain side, but nothing is getting done about it.
+This is due to influence groups and, primarily, money.
+To create this board, we can simply ask "Can you tell me the top 10 political issues that the general population agrees on, but politicians have not acted on?"
+
+
+Finally, I want to give an example of ???
+
+
+<strong>Sister: </strong>O.k. so now you told them what AI is, but what is your plan?
+
+
+<strong>Brother: </strong>I have a simple 4 step plan that will give power back to the people.
+
+
+
+
+
+First, I will put up a "Low Hanging Fruit Board". The "Low Hanging Fruit" board will be populated with ideas where an overwheling majority of the population wants it to happen, but it has not happened. Let me give you an example. According to AI, xx% of voters want stricter gun control. So, why has it not happened. Because special interest groups manage to sway politicians with money. Everyone knows it, but nobody seems to be able to overcome it. The buck stops here. I will...
+
+Next, I will have a "Big Board" created. This is where people can go add their concerns that are not already represented on the Low Hanging Fruit board.
+
+Third, I am going to empower congress and the Senate to make laws that address our citizens concerns.
+I will ask folks from both sides of the aisle to come together, to enact the laws that the citizens want.
+
+Finally, the citizens can vote on the proposals that are generated.
+
+
+So, one year from now, I expect to have a whole bunch of low hanging fruit ready to be decided on by you, the people.
+
+
+After one year, I expect that low hanging fruit board to be much smaller.
+
+
+So, let's move on to the big board. The big board will have a lot more topics. These will primarily be topics where a majority of people lean a certain way, but fixes are not being implemented.
+
+
+
+Side conversation:
+<strong>Brother: </strong>For this conversation I will refer to citizens as "". Kind of like 1984 or xx, where they have nicknames for the minions.
+
+
+No more cheating, no more Gerry Mandering, no more taking sides just to put up a united front. I want each and everyone of my politicians to vote with their heart.... to do what is the right thing to do, on each and every vote.
+
+This brings me to the website. I would use the presidental website to share the top 10 concerns of U.S. citizens. I would come up with this top 10 list, by asking the various AI engines the same question: "".
+
+I would then sort through the results, and create a "Low Hanging Fruit" board, where the most agreed upon topics will be turned into proposed laws. I will instruct my team to figure out which one's are best suited for voting on 1 year from my election and start going after this low hanging fruit.
+
+I will also create a "Big Board". This will allow netcitizens to drill down into more specific topics. Ultimately, I would like to have a way to allow users to input questions or suggestions directly to the website and then use AI to "massage" the data in order to help forward solutions and concerns.
+
+I would ultimately like to require a login that is tied to social security, or other citizen approved identification. This way, we could get a very accurate read on what the citizens want.
+
+
+If the AI companies want to be on our platform, they must agree to sharing their code to a select few government employees who will oversee AI as a whole. My team will use AI to verify AI is on the up and up. No political bias, just base it on what the people are saying. Obviously, we are going to need to firewall this from both foreign users as well as all kinds of bots. And really, if people are brazen enought to try and hack the government website, hopefully our people are smart enough to track them down.
+
+One of the most important issues of the day is healthcare. I think it is pretty obvious that this is an industry that is ripe for fraud. By requiring any healthcare provider to submit their charges we should be able to use AI to root out those that are taking advantage of the system. Now, this is really important, the main idea is not to punish them
+
+
+Just look at the Low Hanging Fruit board.... xxxx, yyyy
+
+For now, I am going to just utilize ChatGPT for answering our questions. In the future, I will add a few more AI sites and build in a comparison tool to verify just how "in agreement" they are. It will be a fun exercise to compare and contrast which each AI company spits out.
+
+
+One of the things I don't get is why are they not using AI to track down the scams that pop-up. I was almost scammed by a pretty sophisticated setup where they sent what looked like official email that said call this number for discounts on your policy. I call up that number, and somebody answers like the are repping the companies. They had me all the way up to telling me I needed to go buy gift cards and use those as payment. That's when I said sure, I will go do that. A short google search later told me this was widespread. If I can google it, the government should surely be able to use AI to shut that industry down.... or at least bring it to it's knees.
+
+For the most part, I will let ChatGPT do the talking. However, I will make once exception and that is corporate financing of elections. We have to stop letting them run our lives, and start making them accountable to our needs. Imagine if that instead of spending billions of dollars a year bribing the politicians, they could give that back to the communities.
+
+My system relies on taking that part out.
+
+
+
+
+
+
+
+

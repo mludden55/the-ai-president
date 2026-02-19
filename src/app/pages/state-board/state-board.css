@@ -1,0 +1,19 @@
+.main-container {
+    min-height: 65vh;
+    width: 100%;
+    padding: 20px;
+}
+
+
+
+.description {
+  font-style: italic;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.section-title {
+  text-align: center;
+}

@@ -1,0 +1,126 @@
+<div class="main-container">
+@if (topic) {
+  @if (loadingSolutions) {
+    @if (topic.id.startsWith('state-')) {
+      <div class="loading">Loading State Concerns…</div>
+    }
+    @else{
+      <div class="loading">Loading Solutions…</div>
+    }    
+  }
+  @else {
+    <p>
+      <span class="boldText">We asked ChatGPT:</span>
+      <span class="question-text"><br>{{questionAsked}}</span>
+    </p>
+    @if (topic.id.startsWith('state-')) {
+      <p>
+        <span class="boldText">The answers are below.</span>
+        <br>
+        <span class="redTextItal">
+          Note that all concern answers and related votes will be cached for 1 month. On the first of each month, the solutions and votes will be cleared and refreshed.
+        </span> 
+      </p>   
+    }
+    @else{
+      <p>
+        <span class="boldText">The answers are below.</span>
+        <br>
+        <span class="redTextItal">
+          Note that all solutions and related votes will be cached for 1 month. On the first of each month, the solutions and votes will be cleared and refreshed.
+        </span> 
+      </p>
+
+
+    }
+    <hr />
+
+    <div class="questions">
+      @if (solutions.length > 0) {
+        <!-- I think I do not want to display solution title
+        <div class="solution-text">{{ solutionTitle }}</div>
+        --> 
+        @if (topic.id.startsWith('state-')) {
+          <p>
+            Rate the concerns below on a scale of 1 to 10! 1 means you are not concerned at all, 10 means you are very concerned.<br><span class="redTextItal">Once you make a selection, it cannot be changed until the first day of the next month.</span>
+          </p> 
+        }
+        @else{
+          <p>
+            Rate the proposed solutions below on a scale of 1 to 10! 1 means you do not like it at all, 10 means you love it. <br><span class="redTextItal">Once you make a selection, it cannot be changed until the first day of the next month.</span>
+          </p>  
+        } 
+      
+        <ol class="solutions">
+          @for (solution of solutions; track solution; let i = $index) {
+            @if (!solution.text.startsWith('###')) {
+              <li class="solution-item">
+                <!-- Solution Content -->
+                <div class="solution-text">
+                  {{ solution.text }}{{getTitleFromDescription(solution.text)}}
+                </div>
+
+                <!-- Footer: Voting + Stats -->
+                <div class="solution-footer">
+                  <!-- Voting Control -->
+                  <div class="solution-voting">
+                    <app-vote-widget
+                      [questionId]="topic.id + '-' + i"
+                      [disabled]="solution.disabled"
+                      [userVote]="solution.userVote"
+                      [initialValue]="solution.initialValue"
+                      (voted)="onVote(tableName, topic.id, i, $event)">
+                    </app-vote-widget>
+                  </div>
+
+                  <!-- Stats + Distribution -->
+                  <div class="solution-stats" *ngIf="solution.stats">
+                    <!-- Left: summary stats -->
+                    <div class="stats-summary">
+                      <div class="stat">
+                        <span class="label">Votes</span>
+                        <span class="value">{{ solution.stats.count }}</span>
+                      </div>
+
+                      <div class="stat">
+                        <span class="label">Avg</span>
+                        <span class="value">{{ getAverage(i) }}</span>
+                      </div>
+                    </div>
+
+                    <!-- Right: distribution chart -->
+                    <div class="distribution-wrapper">
+                      <div class="distribution-title">Distribution</div>
+
+                      <div class="distribution">
+                        @for (value of ratingScale; track value) {
+                          <div class="distribution-bar">
+                            <div class="bar-container">
+                              <div
+                                class="bar-fill"
+                                [style.height.%]="
+                                  solution.stats.count
+                                    ? (solution.stats.distribution[value]) /
+                                      solution.stats.count * 100
+                                    : 0
+                                ">
+                              </div>
+                            </div>
+                            <span class="distribution-label">{{ value }}</span>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a [routerLink]="['/politician', getPoliticianSlug(solution.text)]" [queryParams]="{ from: fromPage, topic: this.topic.title}">Click to see what politicians are championing this cause</a>
+
+              </li>
+            }
+          }
+        </ol>
+      }
+    </div>
+  }
+}
+</div>

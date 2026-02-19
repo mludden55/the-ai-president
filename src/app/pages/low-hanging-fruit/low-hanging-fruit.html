@@ -1,0 +1,97 @@
+<h2 class="section-title">Low Hanging Fruit</h2>
+
+<span class="boldText">We asked ChatGPT: </span>
+<div class="question-block">
+  <div class="question-text">
+    {{shareLink1}}
+  </div>
+  <div class="question-actions">
+    <div class="actions-header">
+      <strong class="actions-title">Other AI Answers</strong>
+    </div>
+    <div class="actions-left">
+      <button (click)="copyToClipboard(shareLink1,1)" class="click-here-btn">
+        Copy Question
+        @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
+      </button>
+      <div class="actions-note">
+        And paste into one of the sites:
+      </div>
+    </div>
+    <div class="actions-right">
+      <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill">
+        🔎 Perplexity
+      </a>
+      <a href="https://gemini.google.com/app" target="_blank" class="ai-pill">
+        ✨ Gemini
+      </a>
+      <a href="https://grok.com/" target="_blank" class="ai-pill">
+        🚀 Grok
+      </a>
+      <a href="https://www.meta.ai/" target="_blank" class="ai-pill">
+        🧠 Meta AI
+      </a>
+      <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill">
+        🤖 Copilot
+      </a>
+    </div>
+  </div>
+</div>
+
+<span class="boldText">ChatGPT replied with the following:</span>
+
+
+
+
+<ol>
+  <li>
+    <strong>Climate Change Action:</strong> A significant portion of the population acknowledges the urgency of addressing climate change. However, political action often lags due to economic interests and lobbying from fossil fuel industries. Long-term implications include increased natural disasters, economic instability, and health crises as climate impacts worsen.
+    <br>
+    <a [routerLink]="['/topic', 'climate-change']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Climate Change</a><br><br>
+  </li>
+
+  <li>
+    <strong>Universal Healthcare:</strong> Many citizens support a move toward universal healthcare, yet political action remains fragmented due to entrenched interests in the healthcare and insurance industries. Long-term implications could include continued disparities in health outcomes and increased financial strain on individuals and families.
+    <br>
+    <a [routerLink]="['/topic', 'universal-healthcare']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Universal Healthcare</a><br><br>
+  </li>
+  <li>
+    <strong>Affordable Housing:</strong> The general population often agrees on the need for affordable housing solutions, yet political solutions are slow to materialize due to zoning laws and real estate interests. This can lead to increased homelessness, urban decay, and social instability.
+    <br>
+    <a [routerLink]="['/topic', 'affordable-housing']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Affordable Housing</a><br><br>
+  </li>
+  <li>
+    <strong>Gun Control Measures:</strong> While there is substantial public support for common-sense gun control measures, political action is often stymied by lobbying from gun rights organizations. Long-term implications include ongoing gun violence, societal trauma, and a fragmented national discourse on safety.
+    <br>
+    <a [routerLink]="['/topic', 'gun-control']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Common Sense Gun Control</a><br><br>
+  </li>
+  <li>
+    <strong>Education Reform:</strong> Many people advocate for significant reforms in education, including equitable funding and access to quality education. Political inertia often results from entrenched educational institutions and funding mechanisms. Long-term implications include a workforce that is ill-prepared for future challenges and widening socioeconomic disparities.
+    <br>
+    <a [routerLink]="['/topic', 'education-reform']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Education Reform</a><br><br>
+  </li>
+  <li>
+    <strong>Income Inequality:</strong> There is a growing consensus about the need to address income inequality through progressive taxation and social safety nets. However, political will is often lacking due to the influence of wealthy donors and corporations. Long-term implications include social unrest, decreased social mobility, and economic stagnation.
+    <br>
+    <a [routerLink]="['/topic', 'income-inequality']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Income Inequality</a><br><br>
+  </li>
+  <li>
+    <strong>Criminal Justice Reform:</strong> A significant portion of the population supports reforms to address systemic racism and mass incarceration. Political action is often limited by partisan divides and fear of backlash. Long-term implications include perpetuation of social inequality and strained community-police relations.
+    <br>
+    <a [routerLink]="['/topic', 'systemic-racism']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Addressing Systemic Racism</a><br><br>
+  </li>
+  <li><strong>Mental Health Services:</strong> There is broad agreement on the need for improved mental health services, yet funding and policy changes are often inadequate. Long-term implications include increased healthcare costs, societal stigma, and a growing burden on social services.
+    <br>
+    <a [routerLink]="['/topic', 'mental-health']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Improving Mental Health Services</a><br><br>
+  </li>
+  <li>
+    <strong>Voting Rights:</strong> Many citizens believe in the importance of protecting and expanding voting rights, but political action is frequently impeded by partisan interests. Long-term implications include diminished democratic participation, potential disenfranchisement, and erosion of public trust in governance.
+    <br>
+    <a [routerLink]="['/topic', 'voting-rights']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Voting Rights</a><br><br>
+  </li>
+  <li>
+    <strong>Infrastructure Investment:</strong> There is a general consensus on the need for significant investment in infrastructure, yet political gridlock often prevents action. Long-term implications include deteriorating public services, economic inefficiency, and potential safety hazards.
+    <br>
+    <a [routerLink]="['/topic', 'infrastructure-investment']" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to Infrastructure Investment</a><br><br>
+  </li>
+</ol>

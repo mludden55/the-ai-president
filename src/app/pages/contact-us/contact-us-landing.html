@@ -1,0 +1,17 @@
+<div class="main-container fireworks-bg">
+  <div class="message-box">
+    @if (action === 'technicalError') {
+      Thank you for sharing information about your technical error.
+      We will follow up on this issue as soon as possible!
+    }
+
+    @if (action === 'siteSuggestion') {
+      Thank you for providing suggestion(s) for improvement to the AIPresident site.
+      We appreciate the input.
+    }
+
+    @if (action === 'otherTopic') {
+      Thank you for contacting us. We appreciate the input.
+    }
+  </div>
+</div>

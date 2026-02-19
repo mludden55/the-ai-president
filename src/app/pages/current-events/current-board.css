@@ -1,0 +1,155 @@
+.description {
+  font-style: italic;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.redTextItal {
+  color: red;
+  font-size: 14px;
+  font-style:italic;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.text-red{
+  color: red; 
+}
+
+.question-block {
+  display: flex;
+  flex-direction: column;   /* ⭐ stack vertically */
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.question-text{
+  color: rgb(231, 171, 3); 
+  font-size: 18px;
+}
+
+ol {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 0px;
+}
+
+.question-actions {
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #d4d6da;
+  /*background: #d80707;*/
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 20% 80%;   /* ⭐ fixed ratio */
+  column-gap: 24px;
+  row-gap: 8px;
+  align-items: center;
+}
+
+.actions-header {
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+/* LEFT COLUMN */
+.actions-left {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.actions-title {
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.actions-note {
+  font-size: 13px;
+  color: #555;
+}
+
+/* RIGHT COLUMN */
+.actions-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  padding: 18px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+/* AI Pills */
+.ai-pill {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e3a8a;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ai-pill:hover {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .question-actions {
+    grid-template-columns: 1fr;   /* stack */
+  }
+
+  .actions-right {
+    justify-content: flex-start;
+  }
+}
+
+
+
+/* Make links stack nicely */
+.question-actions a,
+.question-actions button {
+  text-align: left;
+}
+
+.click-here-btn {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.click-here-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.click-here-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+

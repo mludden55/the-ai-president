@@ -1,0 +1,38 @@
+<div class="main-container">
+@if (politician) {
+  @if (loadingSolutions) {
+    <div class="loading">Loading Politician Support…</div>
+  }
+  @else {
+    <p >
+      <span class="boldText">We asked ChatGPT:</span>
+      <span class="question-text"><br>{{questionAsked}}</span><br>
+    </p>
+    <p class="redTextItal">
+      Note that information about politicians will be cached for 1 month. On the first of each month, the information will be cleared and refreshed.
+    </p> 
+
+    <hr />
+
+    <div class="questions">
+      @if (solutions.length > 0) {
+        <!--<div class="solution-text">{{ solutionTitle }}</div>-->
+          
+        <ol class="solutions">
+          @for (solution of solutions; track solution; let i = $index) {
+            @if (!solution.text.startsWith('###')) {
+              <span class="solution-item">
+              <div class="solution-text"
+                  [class.numbered]="isNumbered(solution.text)">
+                {{ solution.text }}
+              </div>
+
+              </span>
+            }
+          }
+        </ol>
+      }
+    </div>
+  }
+}
+</div>

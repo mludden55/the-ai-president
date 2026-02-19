@@ -1,0 +1,184 @@
+.common-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 65vh;
+  width: 100%;
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto; /* center on desktop */
+}
+
+.redTextItal {
+  color: red;
+  font-size: 14px;
+  font-style:italic;
+}
+
+textarea {
+  width: 500px;
+  max-width: 500px;   /* desktop width */
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  textarea {
+    max-width: 100%;
+  }
+}
+
+.fireworks-bg {
+  min-height: 60vh;
+  width: 100%;                 /* allow shrink */
+  max-width: 100%;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('/assets/images/contact_us.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;          /* better vertical centering */
+
+  padding: 40px 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Message box */
+.message-box {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255,255,255,0.95);
+  padding: 28px 36px;
+  border-radius: 14px;
+
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 600px) {
+  .fireworks-bg {
+    padding: 30px 16px;
+    border-radius: 0;        /* optional – edge to edge mobile look */
+  }
+
+  .message-box {
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+
+/* Each row */
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Labels */
+.form-label {
+  /*width: 150px;*/
+  font-weight: 600;
+  padding-top: 6px;
+}
+
+
+/* Inputs / select / textarea */
+input,
+select,
+textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* Textarea size */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+button[type="submit"] {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+.email-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.email-suggestion {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #b45309;
+}
+
+
+@media (max-width: 768px) {
+
+  .common-container {
+    padding: 16px;
+  }
+
+  .form-row {
+    flex-direction: column;  /* stack label over input */
+    gap: 6px;
+  }
+
+  .form-label {
+    width: 100%;           /* remove fixed width */
+    padding-top: 0;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;          /* full-width button */
+  }
+
+  .redTextItal {
+    font-size: 14px;
+    text-align: center;
+  }
+  .email-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.email-suggestion {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #b45309;
+}
+
+}

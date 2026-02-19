@@ -1,0 +1,82 @@
+<form (ngSubmit)="submit()" #contactForm="ngForm">
+  <!--@if (success) {
+    <p class="success">Message sent successfully!</p>
+}-->
+
+  <div class="common-container">
+    <div class="form-row">
+      <div class="form-field">
+        <label class="form-label">Subject:&nbsp;&nbsp;</label>
+        <select name="subject" [(ngModel)]="model.subject">
+          <option [value]="null" disabled selected>--Please select a subject--</option>
+          <option value="technicalError">Technical Error</option>
+          <option value="siteSuggestion">Site Suggestions</option>
+          <option value="otherTopic">Other</option>
+        </select>
+        <!--<span class="text-danger" *ngIf="!createForm.get('subject')?.value && createForm.get('subject')?.touched">
+          Please select a subject!
+        </span>-->
+      </div>
+    </div>
+    <div class="form-row">      
+      <div class="form-field" style="max-width: 87%;">
+        <label class="form-label">Email:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input
+          name="email"
+          [(ngModel)]="model.email"
+          (ngModelChange)="onEmailChange($event)"
+          type="email"
+          required
+          email
+          pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+          #emailRef="ngModel"
+          autocomplete="on"
+        />
+
+        @if (emailRef.invalid && emailRef.touched) {
+          <div class="redTextItal">
+            Please enter a valid email address.
+          </div>
+        }
+
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label class="form-label">Message:&nbsp;</label><br>
+        <textarea
+          name="message"
+          [(ngModel)]="model.message"
+          placeholder="Message"
+          maxlength="250"
+          required>
+        </textarea>
+        <div class="char-counter">
+  {{ model.message?.length || 0 }} / 250
+</div>
+      </div>
+    </div>
+
+    <div class="form-row" style="width:70%">      
+      <button type="submit" [disabled]="contactForm.invalid">
+        Send
+      </button>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-field">    
+      <div class="redTextItal">
+        <br>We appreciate any suggestions or reports that you send us. Depending on the subject, we may or may not reply with feedback.
+      </div>
+      </div>
+    </div>
+
+    
+  </div>
+  
+
+
+</form>
+
+

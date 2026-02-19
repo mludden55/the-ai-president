@@ -1,0 +1,94 @@
+<h2 class="section-title">Current Events</h2>
+
+  <!--<span class="boldText">We asked ChatGPT: </span><span class="description">Based on recent news coverage, legislative activity, and public opinion data from the past 3-12 months, what political or policy issues have emerged as major public concerns in the United States?
+    Do not include the following topics: Gun Control Measures,Education Reform,Income Inequality,Criminal Justice Reform,Mental Health Services,Voting Rights,Infrastructure Investment.
+    Focus on current or evolving issues rather than long-standing debates.
+    Provide 6-10 concise items with brief explanations.
+    Return the response as a numbered list only.</span><br>-->
+<span class="boldText">We asked ChatGPT:</span>
+  <div class="question-block">
+    <div class="question-text">
+      {{shareLink1}}
+    </div>
+    <span class="redTextItal">Note that question also excluded topics already addressed on Low Hanging Fruit board.</span>
+    <div class="question-actions">
+      <div class="actions-header">
+        <strong class="actions-title">Other AI Answers</strong>
+      </div>
+      <div class="actions-left">
+        <button (click)="copyToClipboard(shareLink1,1)" class="click-here-btn">
+          Copy Question
+          @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
+        </button>
+        <div class="actions-note">
+          And paste into one of the sites:
+        </div>
+      </div>
+      <div class="actions-right">
+        <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill">
+          🔎 Perplexity
+        </a>
+        <a href="https://gemini.google.com/app" target="_blank" class="ai-pill">
+          ✨ Gemini
+        </a>
+        <a href="https://grok.com/" target="_blank" class="ai-pill">
+          🚀 Grok
+        </a>
+        <a href="https://www.meta.ai/" target="_blank" class="ai-pill">
+          🧠 Meta AI
+        </a>
+        <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill">
+          🤖 Copilot
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+    
+    <br>
+    <span class="boldText">ChatGPT replied with the following:</span>
+
+<ol>
+  <li>
+    <strong>Artificial intelligence governance and job impact:</strong> Rapid deployment of generative AI has raised concerns about workforce displacement, misinformation, and the lack of clear regulatory guardrails.
+    <br>
+    <a [routerLink]="['/topic', 'artificial-intelligence']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Artificial Intelligence</a><br><br>
+  </li>
+  <li>
+    <strong>Insurance affordability and availability:</strong> Rising home and auto insurance premiums, especially in disaster-prone regions, have become a major household cost concern and a policy challenge for states.
+    <br>
+    <a [routerLink]="['/topic', 'insurance-affordability']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Insurance Affordability</a><br><br>
+  </li>
+  <li>
+    <strong>Election administration and trust:</strong> Ongoing debates focus on election security, ballot access, and the capacity of state and local systems to manage high-turnout elections.
+    <br>
+    <a [routerLink]="['/topic', 'election-administration']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Election Administration</a><br><br>
+  </li>
+  <li>
+    <strong>Housing affordability and property taxes:</strong> Elevated interest rates, housing shortages, and reassessments have intensified public pressure for near-term housing and tax relief measures.
+    <br>
+    <a [routerLink]="['/topic', 'housing-affordability']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Housing Affordability</a><br><br>
+  </li>
+  <li>
+    <strong>Supply chain resilience and domestic manufacturing:</strong> Recent disruptions and geopolitical risks have renewed attention on reshoring, critical materials, and industrial policy effectiveness.
+
+    <br>
+    <a [routerLink]="['/topic', 'supply-chain']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Supply Vhain Resilience</a><br><br>
+  </li>
+  <li>
+    <strong>Student loan repayment transitions:</strong> Changes to repayment rules and enforcement have reintroduced financial strain for borrowers and prompted calls for administrative fixes.
+    <br>
+    <a [routerLink]="['/topic', 'student-loan']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Student Loan Repayment</a><br><br>
+  </li>
+  <li>
+    <strong>Energy grid reliability and infrastructure strain:</strong> Extreme weather events have exposed vulnerabilities in aging energy infrastructure, prompting concern over reliability and preparedness.
+    <br>
+    <a [routerLink]="['/topic', 'energy-grid']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Energy Grid Reliability</a><br><br>
+  </li>
+  <li>
+    <strong>Data privacy and consumer protection:</strong> High-profile breaches and expanded data collection by platforms have increased demand for stronger privacy standards and enforcement.
+    <br>
+    <a [routerLink]="['/topic', 'data-privacy']" [queryParams]="{ from: 'current-board' }"><br>See Solutions Related to Data Privacy</a><br><br>
+  </li>
+</ol>

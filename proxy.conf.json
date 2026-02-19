@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

@@ -1,0 +1,48 @@
+
+
+
+.vote-btn.active {
+  background: #1e3a8a;
+  color: white;
+  border-color: #1e3a8a;
+}
+
+.vote-confirmation {
+  margin-left: 12px;
+  font-size: 0.9rem;
+  color: #065f46;
+}
+
+
+
+
+.vote-btn-wrapper-container {
+  display: flex;            /* arrange children horizontally */
+  flex-direction: row;      /* horizontal row */
+  justify-content: center;  /* center all buttons */
+  gap: 8px;                 /* horizontal spacing between buttons */
+  vertical-align: top;
+}
+
+.vote-btn-wrapper {
+  display: flex;            /* arrange button and label vertically */
+  flex-direction: column;   /* button on top, label below */
+  align-items: center;      /* center label under button */
+}
+
+.vote-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.vote-label {
+  margin-top: 4px;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+
+

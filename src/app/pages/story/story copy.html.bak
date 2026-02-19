@@ -1,0 +1,292 @@
+<div class="main-container">
+
+<h2 style="text-align: center;">The AI President - A Short Story</h2>
+<!--
+<ng-template #answerBubble>
+  <div class="answer-bubble">
+    
+
+    @if (loading) {
+      <div class="loading">Asking ChatGPT…</div>
+    } @else {
+      <markdown [data]="answer"></markdown>
+    }
+  </div>
+</ng-template>
+-->
+
+<p>
+<br><br><strong>Sister: </strong>So, you are telling me that you could do a better job as President than all of those hopefuls out there that have dedicated their life to their country?
+
+<br><br><strong>Brother: </strong>Yes, it would be quite easy.
+
+<br><br><strong>Sister: </strong>O.k. I'll bite, what is your plan?
+
+<br><br><strong>Brother: </strong>I would be the first AI president.
+
+<br><br><strong>Sister: </strong>The first AI president? O.k. I am intrigued. Give me your introductory speech.
+
+<br><br><strong>Brother: </strong>It would go something like this:
+"Hello my fellow Americans, my name is John Q. Hopeful, and I want to be your first AI president.
+
+First, I want to acknowledgie that AI can be used for bad intentions. Bad people can use it to do bad things.... and if elected president, I can assure you that I will use the powers of the government to protect the people as best I can.""
+
+<br><br><strong>Sister: </strong>And exactly how are you going to protect the people.
+
+<br><br><strong>Brother: </strong>There are lot's of ways. For instance, online and phone scams are pretty common in our lives these days. We can use AI to track those scams down faster, saving a lot of people a lot of time and money...... but we are getting off track, can I finish my speech?
+
+<br><br><strong>Sister: </strong>Why of course, please continue Mr. Presidential hopeful.
+
+<br><br><strong>Brother: </strong>So after acknowledging the dangers I would go right in to explaing how we can use it to our benefit. I would say something like:
+ "Having said that, AI gives us the ability to transform our society in a transcendental way.
+
+<br><br>Let me first explain AI in a simple way that most people can understand. Basically, you can ask AI questions and it takes all of the data it has collected and sorts through that data in a "supposedly" non-partisian manner to give you the best answer.
+
+<br><br><strong>Sister: </strong>Why did you put up "bunny ears" when you said supposedly?
+
+<br><br><strong>Brother: </strong>Because it is difficult to know for sure that a particular AI company does not have a "partisian bend". I would like to see the government get involved in regulating the AI industry, but that is a topic for another day.
+... continuing with my speech "If you want a more detailed description of what AI is all about, you can simply ask something like below:"
+
+<div class="question-block">
+  <!-- LEFT SIDE — MAIN CONTENT -->
+  <div class="question-content">
+
+    <div class="question-text">
+      {{shareLink1}}
+    </div>
+
+    <br>If you want to see what ChatGPT had to say:
+    <a href="#" 
+       (click)="ask('story-explain-ai', shareLink1, 1); $event.preventDefault()">
+       Click Here
+    </a>
+    @if (loadingQuestions[1]) {
+      <div class="loading">Asking ChatGPT…</div>
+    }
+    @if (answers[1]) {
+      <span class="text-bold"><br><br>ChatGPT reply:</span>
+      <span class="text-response">
+        <br><br>
+        <span [innerHTML]="formatToList(answers[1])"></span>
+      </span>
+      <br><br>
+      <span class="text-red">
+        Above answer is cached for 30 days. We will re-ask ChatGPT on the first of each month.
+      </span>
+    }
+  </div>
+
+  <div class="question-actions">
+    <strong>Other AI Answers</strong>
+    <button (click)="copyToClipboard(shareLink1,1)" class="click-here-btn">
+      Copy Question @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
+    </button>
+    And paste into one of the sites below.
+
+    <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+    <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+    <a href="https://grok.com/" target="_blank">Grok</a>
+    <a href="https://www.meta.ai/" target="_blank">Meta AI</a>
+    <a href="https://copilot.microsoft.com/" target="_blank">Copilot</a>
+  </div>
+</div>
+
+AI actually helped me come up with that question and suggested I word it that way to keep it non-partisian. 
+<br><br>
+What I want to do is use AI to solve problems. If elected president, I would create a website where all registered voters can have a direct say in how this country is run.
+<br><br><strong>Sister: </strong> O.k. hold on, so you are going to create a website where all registered voters can have a say. How are you going to control the voting?
+
+<br><br><strong>Brother: </strong> Yeah, that is actually a tricky one. I hear a lot of noised out there regarding election security. It is my understanding that States control their election data, so it would have to integrate with their existing laws and procedures. Here is what ChatGPT has to say when I asked: Can you briefly explain the interaction between states and the U.S. Government in regards to voters and voter registration?
+
+<div class="question-block">
+  <!-- LEFT SIDE — MAIN CONTENT -->
+  <div class="question-content">
+
+    <div class="question-text">
+      {{shareLink2}}
+    </div>
+
+    <br>If you want to see what ChatGPT had to say:
+    <a href="#"
+       (click)="ask('story-state_interaction', shareLink2, 2); $event.preventDefault()">
+       Click Here
+    </a>
+    @if (loadingQuestions[2]) {
+      <div class="loading">Asking ChatGPT…</div>
+    }
+    @if (answers[2]) {
+      <span class="text-bold"><br><br>ChatGPT reply:</span>
+      <span class="text-response">
+        <br><br>
+        <span [innerHTML]="formatToList(answers[2])"></span>
+      </span>
+      <br><br>
+      <span class="text-red">
+        Above answer is cached for 30 days. We will re-ask ChatGPT on the first of each month.
+      </span>
+    }
+
+    
+  </div>
+
+  <div class="question-actions">
+    To see other AI sites answers, click the Copy Question button then open your preferred site and paste the question in.
+    <button (click)="copyToClipboard(shareLink2,2)" class="ribbonButton">
+      Copy Question @if (linkCopied[2]) { <span class="text-red">Copied!</span> }
+    </button>
+
+    <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+    <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+    <a href="https://grok.com/" target="_blank">Grok</a>
+    <a href="https://www.meta.ai/" target="_blank">Meta AI</a>
+    <a href="https://copilot.microsoft.com/" target="_blank">Copilot</a>
+  </div>
+</div>  
+  
+<br><br><strong>Brother: </strong>So, now that we understand AI better, let's dig into a specific issue. Let's use a topic that has been in the news a lot lately, ask AI:
+<br><br>
+
+<div class="question-block">
+  <!-- LEFT SIDE — MAIN CONTENT -->
+  <div class="question-content">
+
+    <div class="question-text">
+      {{shareLink3}}
+    </div>
+
+    <br>If you want to see what ChatGPT had to say:
+    <a href="#"
+       (click)="ask('story-gerrymandering', shareLink3, 3); $event.preventDefault()">
+       Click Here
+    </a>
+    @if (loadingQuestions[3]) {
+      <div class="loading">Asking ChatGPT…</div>
+    }
+    @if (answers[3]) {
+      <span class="text-bold"><br><br>ChatGPT reply:</span>
+      <span class="text-response">
+        <br><br>
+        <span [innerHTML]="formatToList(answers[3])"></span>
+      </span>
+      <br><br>
+      <span class="text-red">
+        Above answer is cached for 30 days. We will re-ask ChatGPT on the first of each month.
+      </span>
+    }
+    
+  </div>
+
+  <div class="question-actions">
+    To see other AI sites answers, click the Copy Question button then open your preferred site and paste the question in.
+    <button (click)="copyToClipboard(shareLink3,3)" class="ribbonButton">
+      Copy Question @if (linkCopied[3]) { <span class="text-red">Copied!</span> }
+    </button>
+
+    <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+    <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+    <a href="https://grok.com/" target="_blank">Grok</a>
+    <a href="https://www.meta.ai/" target="_blank">Meta AI</a>
+    <a href="https://copilot.microsoft.com/" target="_blank">Copilot</a>
+  </div>
+</div>  
+It would seem there is at least a majority of the population thinks this should be against the law. This is something that I consider to be "Low Hanging Fruit". My website will include a "Low Hanging Fruit" board where the highest priority issues are shared and unofficially voted on.
+
+It would work like this:
+<ol>
+  <li>Display a list of issues where there is general agreement that changes are needed.</li>
+  <li>From the list of issues, the user can click a link that will show proposed solutions. The user can then rate that proposed solution on a scale of 1-10. 1 meaning they do not like the idea at all. 10 means they love the idea and think action should be taken.</li>
+  <li>From the list of proposed solutions, you can also click on a link to see which politicians are championing specific causes.</li>
+</ol>
+
+
+The list from #2 above is where the politicians get involved. I want them focusing on those issues, so that we can pass laws that address the wants and needs of the people that are most obvious.
+<br><br>
+My thought process is to go after the low hanging fruit topics as early as possible in my presidency so that by the time the first annual vote comes around we can solve some of those issues. Then, come January 1st of the next year, we can create a new list and get to work on those issues for the following year.
+<br><br>
+This brings me to the next page on the website, the "Current Events" board. The idea here is to share ideas on things that xxx. This board will be similar to the Low Hanging Fruit board, but it will be refreshed on the first of each month. I may find a way to archive the proposed solutions and votes on those solutions, but my demo for now just clears out and starts over on the first of each month.
+<br><br>
+Finally, I will include a 'State Issues' board. This will show some of the biggest concerns at the state level. It will also allow for user to rate the solutions that they most agree on. Ideally, the state votes would be limited to a persons home state... but for now my demo just keeps to one vote per IP address, regardless of which state they live in.
+<br><br>
+So, one year from now, I expect to have a whole bunch of low hanging fruit ready to be decided on by you, the people.
+<br><br>
+After one year, I expect that low hanging fruit board to be much smaller.
+<br><br>
+So, let's move on to the big board. The big board will have a lot more topics. These will primarily be topics where a majority of people lean a certain way, but fixes are not being implemented.
+<br><br>
+I would ultimately like to require a login that is tied to social security, or other citizen approved identification. This way, we could get a very accurate read on what the citizens want.
+<br><br>
+If the AI companies want to be on our platform, they must agree to sharing their code to a select few government employees who will oversee AI as a whole. My team will use AI to verify AI is on the up and up. No political bias, just base it on what the people are saying. Obviously, we are going to need to firewall this from both foreign users as well as all kinds of bots. And really, if people are brazen enought to try and hack the government website, hopefully our people are smart enough to track them down.
+<br><br>
+One of the most important issues of the day is healthcare. I think it is pretty obvious that this is an industry that is ripe for fraud. By requiring any healthcare provider to submit their charges we should be able to use AI to root out those that are taking advantage of the system. Now, this is really important, the main idea is not to punish them
+<br><br>
+Just look at the Low Hanging Fruit board.... xxxx, yyyy
+<br><br>
+For now, I am going to just utilize ChatGPT for answering our questions. In the future, I will add a few more AI sites and build in a comparison tool to verify just how "in agreement" they are. It will be a fun exercise to compare and contrast which each AI company spits out.
+<br><br>
+One of the things I don't get is why are they not using AI to track down the scams that pop-up. I was almost scammed by a pretty sophisticated setup where they sent what looked like official email that said call this number for discounts on your policy. I call up that number, and somebody answers like the are repping the companies. They had me all the way up to telling me I needed to go buy gift cards and use those as payment. That's when I said sure, I will go do that. A short google search later told me this was widespread. If I can google it, the government should surely be able to use AI to shut that industry down.... or at least bring it to it's knees.
+<br><br>
+For the most part, I will let ChatGPT do the talking. However, I will make once exception and that is corporate financing of elections. We have to stop letting them run our lives, and start making them accountable to our needs. Imagine if that instead of spending billions of dollars a year bribing the politicians, they could give that back to the communities.
+<br><br>
+My system relies on taking that part out.
+
+Let's talk about gerrymandering a little bit. In my mind, gerrymandering is basically the people in power trying to cheat the vote. Isn't that something we should be against as a population?
+
+I would propose we settle the matter once and for all. Use statistics based analisys, to create maps that all states must ahdere to. I am not entirely sure, but maybe something like breaking up each state into 10 population areas. It gets complicated when you bring urban vs. rural into the picture, but here is what I asked ChatGPT as a starting point:
+
+<div class="question-block">
+  <!-- LEFT SIDE — MAIN CONTENT -->
+  <div class="question-content">
+
+    <div class="question-text">
+      {{shareLink4}}
+    </div>
+
+    <br>If you want to see what ChatGPT had to say:
+    <a href="#"
+       (click)="ask('story-map-states', shareLink4, 4); $event.preventDefault()">
+       Click Here
+    </a>
+    @if (loadingQuestions[4]) {
+      <div class="loading">Asking ChatGPT…</div>
+    }
+    @if (answers[4]) {
+      <span class="text-bold"><br><br>ChatGPT reply:</span>
+      <span class="text-response">
+        <br><br>
+        <span [innerHTML]="formatToList(answers[4])"></span>
+      </span>
+      <br><br>
+      <span class="text-red">
+        Above answer is cached for 30 days. We will re-ask ChatGPT on the first of each month.
+      </span>
+    }
+    
+  </div>
+
+  <div class="question-actions">
+    To see other AI sites answers, click the Copy Question button then open your preferred site and paste the question in.
+    <button (click)="copyToClipboard(shareLink4,4)" class="ribbonButton">
+      Copy Question @if (linkCopied[4]) { <span class="text-red">Copied!</span> }
+    </button>
+
+    <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+    <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+    <a href="https://grok.com/" target="_blank">Grok</a>
+    <a href="https://www.meta.ai/" target="_blank">Meta AI</a>
+    <a href="https://copilot.microsoft.com/" target="_blank">Copilot</a>
+  </div>
+</div>
+
+<br>
+Think of all of the time and monetary resources wasted doing this, when they should be focusing on delivering to the people. This brings me to my Low Hanging Fruit board that I will add to the presidential website.
+
+I read that they are trying to break up Salt Lake City into 4 different districts. On the common sense meter, that rates a 0. Unless, of course, they are going to do that to all large cities.
+
+For the current events board, the idea is to get a good pulse on what the U.S. citizens think on a certain subject. If we have this limited to U.S. citizens it would help us work through the clutter that is created by people outside of the country trying to affect our opinions.
+
+For instance, ICE is a subject where there seems to be an obvious majority that do not agree with the current approach they are taking. This would allow us to pivot quicker to fix the situation.
+
+</div>
+
+
+

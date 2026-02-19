@@ -1,0 +1,12 @@
+<div class="main-container">
+  <p>See what some of the biggest issues residents of specific states are concerned about. Select a state to begin.</p>
+  <select (change)="onStateSelected($any($event.target).value)">
+    <option value="">Select a state</option>
+
+    @for (state of states; track state.code) {
+      <option [value]="state.code">
+        {{ state.name }}
+      </option>
+    }
+  </select>
+</div>
