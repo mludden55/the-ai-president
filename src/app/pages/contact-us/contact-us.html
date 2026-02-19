@@ -1,8 +1,4 @@
 <form (ngSubmit)="submit()" #contactForm="ngForm">
-  <!--@if (success) {
-    <p class="success">Message sent successfully!</p>
-}-->
-
   <div class="common-container">
     <div class="form-row">
       <div class="form-field">
@@ -13,9 +9,7 @@
           <option value="siteSuggestion">Site Suggestions</option>
           <option value="otherTopic">Other</option>
         </select>
-        <!--<span class="text-danger" *ngIf="!createForm.get('subject')?.value && createForm.get('subject')?.touched">
-          Please select a subject!
-        </span>-->
+
       </div>
     </div>
     <div class="form-row">      
