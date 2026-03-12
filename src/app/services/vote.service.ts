@@ -59,6 +59,7 @@ export class VoteService {
   }
 
   saveVote(tableName: string, topicId: string, qIndex: number, value: number | undefined, assignedRanks: any, userVotes: any) {
+    /*
     if (value != null){
       if (assignedRanks.includes(value)) {
         const existingIndex2 = this.findVoteByValue(userVotes,value);
@@ -74,6 +75,7 @@ export class VoteService {
         }
       }
     }  
+    */
     return this.http.post(
       'https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/vote',
       { tableName, topicId, questionIndex: qIndex, value }
