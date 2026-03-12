@@ -1,0 +1,64 @@
+<div class="question-block">
+  <div class="question-content">
+    <!--<div class="question-text">
+      {{ questionText }}
+    </div>-->
+
+    <button (click)="ask('story-' + questionShort, questionText, questionId)" class="click-here-btn">
+      {{ buttonText[questionId] }}
+      @if (linkCopied[questionId]) {
+        <span class="text-red">Copied!</span>
+      }
+    </button>
+
+    @if (loadingQuestions[questionId]) {
+        <div class="loading">Asking Claude… @if (showPatienceMessage[questionId]){This can take a few seconds.}</div>
+    }
+
+
+    @if (answers[questionId]) {
+      <div class="text-bold">
+        <br>Claude reply: <span class="text-response">{{ answers[questionId] }}</span>
+      </div>
+
+      <div class="redTextItal">
+        <br>Above answer will be cached until the first day of next month.
+      </div>
+    }<br><br>
+
+    <div class="question-actions">   
+      <!-- Row 1 (full width title) -->
+      <div class="actions-left">        
+        <strong class="actions-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ask Other AI Sites</strong>
+        <button (click)="copyToClipboard(questionText,questionId)" class="click-here-btn">
+          Copy Question
+          @if (linkCopied[2]) { <span class="text-red">Copied!</span> }
+        </button>
+        <div class="actions-note">
+          And paste into one of the sites:
+        </div>
+      </div>
+
+      <div class="actions-right">
+        <a href="https://chat.openai.com/" target="_blank" class="ai-pill">
+          💬 ChatGPT
+        </a>
+        <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill">
+          🔎 Perplexity
+        </a>
+        <a href="https://gemini.google.com/app" target="_blank" class="ai-pill">
+          ✨ Gemini
+        </a>
+        <a href="https://grok.com/" target="_blank" class="ai-pill">
+          🚀 Grok
+        </a>
+        <a href="https://www.meta.ai/" target="_blank" class="ai-pill">
+          🧠 Meta AI
+        </a>
+        <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill">
+          🤖 Copilot
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

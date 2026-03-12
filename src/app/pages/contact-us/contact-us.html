@@ -9,9 +9,9 @@
         <label class="form-label">Subject:&nbsp;&nbsp;</label>
         <select name="subject" [(ngModel)]="model.subject">
           <option [value]="null" disabled selected>--Please select a subject--</option>
-          <option value="technicalError">Technical Error</option>
-          <option value="siteSuggestion">Site Suggestions</option>
-          <option value="otherTopic">Other</option>
+          <option value="Technical Error">Technical Error</option>
+          <option value="Site Suggestion">Site Suggestion</option>
+          <option value="Other">Other</option>
         </select>
 
       </div>
@@ -47,12 +47,12 @@
           name="message"
           [(ngModel)]="model.message"
           placeholder="Message"
-          maxlength="250"
+          maxlength="1000"
           required>
         </textarea>
         <div class="char-counter">
-  {{ model.message?.length || 0 }} / 250
-</div>
+        {{ model.message.length || 0 }} / 1000
+      </div>
       </div>
     </div>
 

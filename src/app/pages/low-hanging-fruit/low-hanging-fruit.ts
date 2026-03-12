@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AiService } from '../../core/services/ai';
+import { AiService } from '../../services/ai';
 import { ChangeDetectorRef } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { Topic } from '../../data/topics';
+import { TopicContextService } from '../../services/topic-context.service';
 
 @Component({
   standalone: true,
@@ -20,6 +22,7 @@ export class LowHangingFruitComponent {
   activeQuestionId: string | null = null;
   currentEnv = environment.name;
   linkCopied:  { [key: number]: boolean } = {};
+  topics1to10: Topic[] = [];
 
   shareLink1 = `What political or policy issues show broad agreement among the U.S. public across polls and surveys, but have seen limited or stalled legislative action?
   List up to 10 issues and briefly explain the public consensus and the policy gap for each.`;
@@ -27,36 +30,15 @@ export class LowHangingFruitComponent {
 
   constructor(
     private ai: AiService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private topicService: TopicContextService
   ) {}
 
-  /*ask(topic: string, question: string, questionId: string) {
-    console.log("BeginAsk:", question);
-    this.loading = true;
-    this.answer = '';
-    this.showAnswer = true;
-    this.activeQuestionId = questionId;
-    const topicComplete = 'low-' + topic;
-    console.log("this.currentEnv",this.currentEnv);
-    console.log("topicComplete",topicComplete);
-    console.log("question",question);
-    this.ai.ask(this.currentEnv, 'Low', topicComplete, question ).subscribe({
-      next: res => {
-        this.answer = res.response;
-        this.loading = false;
-        this.cdr.detectChanges();
-        //console.log("Ask1", this.answer);
-      },
-      error: () => {
-        this.answer = 'An error occurred while contacting ChatGPT.';
-        this.loading = false;
-        this.cdr.detectChanges();
-        //console.log("Ask2", this.answer);
-      }
-    });
-    console.log("EndAsk", this.answer);
-  }
-    */
+  ngOnInit(): void {
+    this.topics1to10 = [];
+    this.topics1to10 = this.topicService.getTopicsRange(0, 10);
+  }    
+
   copyToClipboard(linkToCopy: string, linkId: number) {
     const plainText = linkToCopy;
     const htmlContent = linkToCopy;
@@ -64,14 +46,11 @@ export class LowHangingFruitComponent {
     const onSuccess = () => {
       this.linkCopied[linkId] = true;
       this.cdr.detectChanges(); // 👈 MUST be here
-      console.log('XXX');
+
       setTimeout(() => {
         this.linkCopied[linkId] = false;
         this.cdr.detectChanges(); // 👈 and here
-        console.log('YYY');
       }, 2000);
-
-      console.log('Copied to clipboard!');
     };
 
     if (navigator.clipboard && window.ClipboardItem) {
@@ -92,6 +71,14 @@ export class LowHangingFruitComponent {
         .catch(err => console.error('Failed to copy text:', err));
     }
   }
+
+  formatDescription(text: string): string {
+    return text
+      .replace(/Public Consensus:/g, '<div class="desc-section"><strong>Public Consensus:</strong>')
+      .replace(/Policy Gap:/g, '</div><div class="desc-section"><strong>Policy Gap:</strong>')
+      + '</div>';
+  }
+
   closeAnswer() {
     this.activeQuestionId = null;
   }

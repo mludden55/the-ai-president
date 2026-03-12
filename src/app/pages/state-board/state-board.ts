@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AiService } from '../../core/services/ai';
+import { AiService } from '../../services/ai';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
@@ -152,33 +152,6 @@ export class StateBoardComponent{
 
     return map[stateCode] ?? 'state-tx';
   }
-
-
-  /*ask(topic: string, question: string, questionId: string) {
-    console.log("BeginAsk:", question);
-    this.loading = true;
-    this.answer = '';
-    this.showAnswer = true;
-    this.activeQuestionId = questionId;
-
-    this.ai.ask(this.currentEnv, topic, question, 'BIG').subscribe({
-      next: res => {
-        this.answer = res.response;
-        this.loading = false;
-        this.cdr.detectChanges();
-        console.log("Ask1", this.answer);
-      },
-      error: () => {
-        this.answer = 'An error occurred while contacting ChatGPT.';
-        this.loading = false;
-        this.cdr.detectChanges();
-        console.log("Ask2", this.answer);
-      }
-    });
-    console.log("EndAsk", this.answer);
-  }
-    */
-
   closeAnswer() {
     this.activeQuestionId = null;
   }

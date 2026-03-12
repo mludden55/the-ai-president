@@ -25,11 +25,6 @@ export class VoteWidgetComponent {
   }
 
   vote(value: number) {
-    if (this.disabled) return;
-    this.selected = value;
-    //this.voteSelected.emit(value);
-    this.disabled = true;
     this.voted.emit(value);
-    
   }
 }

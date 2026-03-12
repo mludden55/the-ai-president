@@ -11,28 +11,18 @@ export interface AskResponse {
 @Injectable({ providedIn: 'root' })
 export class AiService {
   
-  private apiUrl = 'https://h5los7hq0m.execute-api.us-west-2.amazonaws.com/aipresident-prod/ask';
+  private apiUrl = 'https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/ask';
 
   constructor(private http: HttpClient) {}
 
-  ask(
-    environment: string,
-    board: string,
-    topic: string,
-    question: string    
-  ): Observable<AskResponse> {    
-    console.log("ENV:", environment);
-    console.log("BOARD:", board);
-    console.log("TOPIC:", topic);
-    console.log("QUESTION:",question);
-
+  ask(environment: string, board: string, topic: string, question: string): Observable<AskResponse> {    
+    console.log("Asking Claude:", question);
     return this.http.post<AskResponse>(this.apiUrl, {
       environment,
       topic,
       question,
       board
-    });
-    
+    });    
   }
 }
 

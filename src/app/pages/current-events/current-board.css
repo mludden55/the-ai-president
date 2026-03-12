@@ -1,3 +1,7 @@
+.main-container {
+  padding: 5px;
+}
+
 .description {
   font-style: italic;
 }
@@ -28,7 +32,7 @@
 }
 
 .question-text{
-  color: rgb(231, 171, 3); 
+  color:#C08331; 
   font-size: 18px;
 }
 
@@ -93,7 +97,7 @@ li {
 
 /* AI Pills */
 .ai-pill {
-  padding: 10px 16px;
+  padding: 10px 10px;
   background: linear-gradient(135deg, #eef2ff, #e0e7ff);
   border-radius: 999px;
   text-decoration: none;

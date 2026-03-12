@@ -5,12 +5,13 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { MarkdownModule } from 'ngx-markdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
     provideRouter(routes),
-
+    importProvidersFrom(BrowserAnimationsModule),
     // 🔑 This is the missing piece
     importProvidersFrom(
       MarkdownModule.forRoot()

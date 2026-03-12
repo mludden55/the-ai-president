@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 interface Distribution {
   [rating: number]: number;
@@ -12,11 +12,11 @@ interface VoteStats {
   distribution: Distribution;
 }
 
-
 @Injectable({ providedIn: 'root' })
 export class VoteService {
   private sessionId = this.getSessionId();
 
+  assignedRanks: number[] = [];
   constructor(private http: HttpClient) {}
 
   private getSessionId(): string {
@@ -32,47 +32,69 @@ export class VoteService {
     return `vote:${topicId}:${qIndex}`;
   }
 
-  /*getVote(topicId: string, qIndex: number): number | null {
-    const v = sessionStorage.getItem(this.key(topicId, qIndex));
-    return v ? Number(v) : null;
-  }
-  
-
-  hasVoted(topicId: string, qIndex: number): boolean {
-    return this.getVote(topicId, qIndex) !== null;
-  }
-  */
-
   getUserVotes(
     tableName: string,
     topicId: string
   ): Observable<Record<number, number>> {
 
-    console.log('getUserVotes:', tableName, ":", topicId);
-
     const params = new HttpParams()
       .set('tableName', tableName)
       .set('topicId', topicId);
-
     return this.http.get<Record<number, number>>(
       `https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/topic/${topicId}/votes/user`,
       { params }
     );
   }
 
+  findVoteByValue(
+    userVotes: Record<number, number>,
+    value: number
+  ): number | undefined {
+    for (const key in userVotes) {
+      if (Number(userVotes[key]) === Number(value)) {
+        return Number(key);
+      }
+    }
+    return undefined;
+  }
 
+  saveVote(tableName: string, topicId: string, qIndex: number, value: number | undefined, assignedRanks: any, userVotes: any) {
+    if (value != null){
+      if (assignedRanks.includes(value)) {
+        const existingIndex2 = this.findVoteByValue(userVotes,value);
 
-  saveVote(tableName: string, topicId: string, qIndex: number, value: number): Observable<any> {
-    console.log("SavingVote:", tableName, topicId, ":", qIndex, ":", value);
+        if(existingIndex2 === null || existingIndex2 === undefined){
+          return this.http.post(
+            'https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/vote',
+            { tableName, topicId, questionIndex: qIndex, value }
+          );          
+        }
+        else{
+          return of(existingIndex2);
+        }
+      }
+    }  
     return this.http.post(
       'https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/vote',
       { tableName, topicId, questionIndex: qIndex, value }
     );
   }
 
+  removeVote(tableName: string, topicId: string, qIndex: number) {
+    // 1️⃣ Clear vote case
+    if (qIndex === undefined) {
+      return of(null);
+    }
+
+    // Send to backend
+    return this.http.post(
+      'https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/removeVote',
+      { tableName, topicId, questionIndex: qIndex }
+    );
+  }
+
 
   getVoteStats(tableName: string, topicId: string, qIndex: number): Observable<VoteStats> {
-    //console.log("GETVOTESTATS", tableName, ":", topicId,":", qIndex);
     return this.http.get<VoteStats>(
       `https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/topic/${topicId}/question/${qIndex}/stats`,
       {

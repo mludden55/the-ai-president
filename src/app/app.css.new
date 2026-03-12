@@ -1,27 +1,20 @@
 
-/* styles.css */
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
+  margin: 0;
 }
 
 .app-container {
-  background-image: url('assets/images/background_whitehouse.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100%;
-  width: 100%;
-  box-sizing: border-box;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  background-color: #ffffff;
 }
 
+
 .tabs-wrapper {
-  width: fit-content;
+  width: 60%;
+  max-width: 1200px;
   margin: 0 auto;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -30,18 +23,30 @@ html, body {
   border-top-right-radius: 32px;
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    inset 0 1px 0 rgba(255,255,255,0.08);  
 }
 
-.tabs {
-  display: flex;
-  gap: 28px;
-  padding: 12px 24px 18px 24px;
-  font-size: 18px;
-  font-weight: 500;
+.tabs-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
+.sub-menu {
+  width: 100%;
+}
 
+.sub-menu-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .tabsTitle {
   text-align: center;
@@ -51,17 +56,12 @@ html, body {
   padding: 10px 24px 6px 24px;
 }
 
-.sub-menu {
-  width: 100%;
+.tabs {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.35);
-  color: white;
-  font-size: 16px;
+  gap: 28px;
+  padding: 12px 24px 18px 24px;
+  font-size: 18px;
   font-weight: 500;
-  text-transform: uppercase;
-  padding: 8px 0px;
 }
 
 /* Tab Links */
@@ -90,6 +90,34 @@ html, body {
   border-bottom: 2px solid rgba(255,255,255,0.7);
 }
 
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;        /* allow wrapping */
+    gap: 12px;
+    font-size: 15px;
+    padding: 12px 16px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+
+  .tabs a {
+    flex: 1 1 45%;          /* two per row */
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    /*background: #f6f3f3;*/
+  }
+
+  .tabs a.active {
+    /*background: #1d4ed8;*/
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+    /*border-bottom: none;     */
+  }
+}
+
 .content {
   width: 100%;
   max-width: 900px;
@@ -104,7 +132,7 @@ html, body {
 .main-container {
   min-height: 100vh;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
 }
 
 .common-container {
@@ -146,54 +174,20 @@ html, body {
   padding-top: 6px;
 }
 
-/* phone display */
 @media (max-width: 768px) {
-  .tabs-wrapper{
-    width: 103.3%;
-    padding: 0px;
-    align-self: stretch;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    box-shadow: none;
-  }  
   .app-container {
-    min-height: 100%;
+    background-image: url('assets/images/background_whitehouse.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .tabs-wrapper {
     width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: none;
-    background-color: #ffffff;
+    max-width: 100%;
+    margin:0;
+    border-radius: 0;
   }
 
-  .tabs {
-    flex-wrap: wrap;        /* allow wrapping */
-    gap: 12px;
-    font-size: 15px;
-    padding: 12px 16px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-  }
-
-
-
-  .sub-menu {
-    width:100%;
-  }
-  .tabs a {
-    flex: 1 1 45%;          /* two per row */
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 8px;
-    /*background: #f6f3f3;*/
-  }
-
-  .tabs a.active {
-    /*background: #1d4ed8;*/
-    color: #ffffff;
-    font-weight: 600;
-    border-bottom: 2px solid rgba(255,255,255,0.7);
-    /*border-bottom: none;     */
-  }
 }
+

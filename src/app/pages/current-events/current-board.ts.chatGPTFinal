@@ -5,8 +5,6 @@ import { ChangeDetectorRef } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { Topic } from '../../data/topics';
-import { TopicContextService } from '../../services/topic-context.service';
 
 @Component({
   selector: 'app-current-board',
@@ -21,25 +19,17 @@ export class CurrentBoard {
   showAnswer = false;
   activeQuestionId: string | null = null;
   currentEnv = environment.name;
-  topics11to20: Topic[] = [];
 
   shareLink1 = `Based on recent news coverage, legislative activity, and public opinion data from the past 3-12 months, what political or policy issues have emerged as major public concerns in the United States?
-    Focus on current or evolving issues rather than long-standing debates. Do not include the following topics: Gun Control, Climate Change, Healthcare Access, Criminal Justice Reform, Infrastructure Investment, Immigration Reform, Paid Family Leave, Voting Rights, Minimum Wage Increase, Prescription Drug Pricing.
+    Focus on current or evolving issues rather than long-standing debates.
     Provide 6-10 concise items with brief explanations.
     Return the response as a numbered list only.`;
-  // Do not include the following topics: Gun Control, Climate Change, Healthcare Access, Criminal Justice Reform, Infrastructure Investment, Immigration Reform, Paid Family Leave, Voting Rights, Minimum Wage Increase, Prescription Drug Pricing   
   linkCopied:  { [key: number]: boolean } = {};
 
   constructor(
     private ai: AiService,
-    private cdr: ChangeDetectorRef,
-    private topicService: TopicContextService
+    private cdr: ChangeDetectorRef
   ) {}
-
-  ngOnInit(): void {
-    this.topics11to20 = [];
-    this.topics11to20 = this.topicService.getTopicsRange(10, 20);
-  }  
 
   copyToClipboard(linkToCopy: string, linkId: number) {
     const plainText = linkToCopy;

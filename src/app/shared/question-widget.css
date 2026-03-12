@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-.chatGPTMain{
+.ClaudeMain{
   background-color: #adccc8;
   border: 8px;
   border-color: red;
@@ -24,7 +24,7 @@
   border-radius: 12px;
 }
 
-.chatGPTFooter{
+.ClaudeFooter{
  margin-bottom: 24px; 
 }
 
@@ -46,7 +46,7 @@
   color: #666;
 }
 
-.chatGptHeader {
+.ClaudeHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,16 +113,24 @@
   font-weight: bold;
 }
 
+.redTextItal {
+  color: red;
+  font-size: 14px;
+  font-style:italic;
+}
+
 ol.decimal-list {
   list-style-type: decimal;
 }
 
 .question-text{
-  color: rgb(231, 171, 3);
+  color:#C08331; 
+  font-size: 18px;
 }
 
 .text-response{
-  color: rgb(177, 6, 57); 
+  color: #1b4332;
+  white-space: pre-line;
 }
 
 .click-here-btn {
@@ -150,35 +158,103 @@ ol.decimal-list {
 
 .question-block {
   display: flex;
-  align-items: flex-start;
-  gap: 24px;
+  flex-direction: column;   /* ⭐ stack vertically */
+  gap: 16px;
   margin-bottom: 24px;
-}
-
-.question-content {
-  flex: 1;
 }
 
 /* Right side rail */
 .question-actions {
-  width: 180px;
-  flex-shrink: 0;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #d4d6da;
+  /*background: #d80707;*/
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 20% 80%;   /* ⭐ fixed ratio */
+  column-gap: 24px;
+  row-gap: 8px;
+  align-items: center;
+}
 
-  padding: 12px;
-  background: #f5f7fa;
-  border-radius: 10px;
-  border-left: 4px solid #4a90e2;
+.actions-header {
+  grid-column: 1 / 3;
+  text-align: center;
+}
 
+/* LEFT COLUMN */
+
+
+.actions-title {
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.actions-note {
+  font-size: 13px;
+  color: #555;
+}
+
+.actions-left {
+  margin-top: 0px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
+}
 
+/* RIGHT COLUMN */
+.actions-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+/* AI Pills */
+.ai-pill {
+  padding: 10px 10px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
   font-size: 14px;
+  color: #1e3a8a;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-/* Make links stack nicely */
-.question-actions a,
-.question-actions button {
-  text-align: left;
+.ai-pill:hover {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
+@media (max-width: 600px) {
+
+  .question-actions {
+    grid-template-columns: 1fr;   /* Stack columns */
+  }
+
+  .actions-header {
+    grid-column: 1;
+  }
+
+  .actions-left {
+    align-items: stretch;
+  }
+
+  .actions-left button {
+    width: 100%;
+  }
+
+  .actions-right {
+    margin-top: 12px;
+  }
+
+}

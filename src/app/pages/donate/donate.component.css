@@ -4,6 +4,7 @@
     align-items: center; /* Centers child divs horizontally */
     min-height: 65vh;
     width: 100%;
+    padding: 10px;
 }
 
 .row-add {  

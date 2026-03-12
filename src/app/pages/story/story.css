@@ -13,9 +13,10 @@
 .main-container {
   min-height: 100vh;
   width: 100%;
+  padding: 5px;
 }
 
-.chatGPTMain{
+.ClaudeMain{
   background-color: #adccc8;
   border: 8px;
   border-color: red;
@@ -24,7 +25,7 @@
   border-radius: 12px;
 }
 
-.chatGPTFooter{
+.ClaudeFooter{
  margin-bottom: 24px; 
 }
 
@@ -46,7 +47,7 @@
   color: #666;
 }
 
-.chatGptHeader {
+.ClaudeHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,8 +125,8 @@ ol.decimal-list {
 }
 
 .question-text{
-  color: rgb(231, 171, 3);
-  font-size: 18px;
+  color:#C08331; 
+  font-size: 16px;
 }
 
 .text-response{
@@ -159,7 +160,7 @@ ol.decimal-list {
   display: flex;
   flex-direction: column;   /* ⭐ stack vertically */
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 0px;
 }
 
 /* Right side rail */
@@ -215,7 +216,7 @@ ol.decimal-list {
 
 /* AI Pills */
 .ai-pill {
-  padding: 10px 16px;
+  padding: 10px 10px;
   background: linear-gradient(135deg, #eef2ff, #e0e7ff);
   border-radius: 999px;
   text-decoration: none;

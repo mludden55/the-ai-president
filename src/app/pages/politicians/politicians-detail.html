@@ -1,11 +1,11 @@
 <div class="main-container">
 @if (politician) {
   @if (loadingSolutions) {
-    <div class="loading">Loading Politician Support…</div>
+    <div class="loading">Loading Politician Support…@if (showPatienceMessage){This can take a few seconds.}</div>
   }
   @else {
     <p >
-      <span class="boldText">We asked ChatGPT:</span>
+      <span class="boldText">We asked Claude:</span>
       <span class="question-text"><br>{{questionAsked}}</span><br>
     </p>
     <p class="redTextItal">
@@ -15,24 +15,12 @@
     <hr />
 
     <div class="questions">
-      @if (solutions.length > 0) {
-        <!--<div class="solution-text">{{ solutionTitle }}</div>-->
-          
-        <ol class="solutions">
-          @for (solution of solutions; track solution; let i = $index) {
-            @if (!solution.text.startsWith('###')) {
-              <span class="solution-item">
-              <div class="solution-text"
-                  [class.numbered]="isNumbered(solution.text)">
-                {{ solution.text }}
-              </div>
 
-              </span>
-            }
-          }
-        </ol>
-      }
+    <div class="solution-item">
+      <div [innerHTML]="formattedHtml"></div>
     </div>
-  }
-}
+        </div>
+      }
+    }
+
 </div>

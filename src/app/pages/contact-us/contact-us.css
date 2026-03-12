@@ -1,7 +1,7 @@
 .common-container {
   display: flex;
   flex-direction: column;
-  min-height: 65vh;
+  min-height: 85vh;
   width: 100%;
   padding: 24px;
   max-width: 800px;
@@ -27,21 +27,14 @@ textarea {
 }
 
 .fireworks-bg {
-  min-height: 60vh;
-  width: 100%;                 /* allow shrink */
-  max-width: 100%;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('/assets/images/contact_us.png');
-
+  min-height: 90vh;
+  width: 100%;              /* allow shrink */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   justify-content: center;
   align-items: center;          /* better vertical centering */
-
   padding: 40px 20px;
   border-radius: 20px;
   overflow: hidden;
@@ -52,14 +45,12 @@ textarea {
 .message-box {
   width: 100%;
   max-width: 650px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(184, 180, 180, 0.95);
   padding: 28px 36px;
   border-radius: 14px;
-
   font-size: 20px;
   line-height: 1.5;
   font-weight: 500;
-
   box-shadow: 0 8px 22px rgba(0,0,0,0.25);
 }
 

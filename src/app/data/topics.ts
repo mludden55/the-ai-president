@@ -6,115 +6,145 @@ export interface Topic {
 }
 
 export const TOPICS: Topic[] = [
-  // The following are Low Hanging Fruit questions
-  {
-    id: 'climate-change',
-    title: 'Climate Change Action',
-    description:
-      'A significant portion of the population acknowledges the urgency of addressing climate change. However, political action often lags due to economic interests and lobbying from fossil fuel industries.',
-  },
-  {
-    id: 'universal-healthcare',
-    title: 'Universal Healthcare',
-    description:
-      'Many citizens support a move toward universal healthcare, yet political action remains fragmented due to entrenched interests in the healthcare and insurance industries.',
-  },
-  {
-    id: 'affordable-housing',
-    title: 'Affordable Housing',
-    description:
-      'The general population often agrees on the need for affordable housing solutions, yet political solutions are slow to materialize due to zoning laws and real estate interests. This can lead to increased homelessness, urban decay, and social instability.',
-  },
+  // The following are The Big Board questions
   {
     id: 'gun-control',
     title: 'Gun Control',
-    description:
-      'While there is substantial public support for common-sense gun control measures, political action is often stymied by lobbying from gun rights organizations. Long-term implications include ongoing gun violence, societal trauma, and a fragmented national discourse on safety.',
+    description: `<em>Public Consensus:</em> A majority of Americans support measures like universal background checks and red flag laws.
+    <br>
+    <em>Policy Gap:</em> Despite high public support, significant federal legislation has stalled, often due to strong opposition from gun rights advocates and lobbying groups.`
   },
   {
-    id: 'education-reform',
-    title: 'Education Reform',
-    description:
-      'Many people advocate for significant reforms in education, including equitable funding and access to quality education. Political inertia often results from entrenched educational institutions and funding mechanisms. Long-term implications include a workforce that is ill-prepared for future challenges and widening socioeconomic disparities.',
+    id: 'climate-change',
+    title: 'Climate Change',
+    description: `<em>Public Consensus:</em> Many Americans recognize climate change as a serious threat and support policies to address it, such as renewable energy investments.
+    <br>
+    <em>Policy Gap:</em> Legislative efforts to enact comprehensive climate action have been hindered by partisan divides and economic concerns.`
   },
   {
-    id: 'income-inequality',
-    title: 'Income Inequality',
-    description:
-      'There is a growing consensus about the need to address income inequality through progressive taxation and social safety nets. However, political will is often lacking due to the influence of wealthy donors and corporations. Long-term implications include social unrest, decreased social mobility, and economic stagnation.',
+    id: 'healthcare-access',
+    title: 'Healthcare Access',
+    description: `<em>Public Consensus:</em> There is widespread support for expanding access to healthcare and reducing costs, including options like Medicare for All.
+    <br>
+    <em>Policy Gap:</em> Legislative proposals face resistance from some political factions, influenced by concerns over costs and the role of private insurance.`
   },
   {
-    id: 'systemic-racism',
-    title: 'Systemic Racism',
-    description:
-      'Persistent racial disparities in areas such as criminal justice, housing, education, and healthcare indicate structural inequities embedded in public policy. While public awareness has grown, legislative responses are often limited by political resistance and uneven implementation. Long-term consequences include reduced economic participation, continued social stratification, and weakened trust in public institutions.',
-  },
-  {
-    id: 'mental-health',
-    title: 'Mental Health',
-    description:
-      'There is broad agreement on the need for improved mental health services, yet funding and policy changes are often inadequate. Long-term implications include increased healthcare costs, societal stigma, and a growing burden on social services.',
-  },
-  {
-    id: 'voting-rights',
-    title: 'Voting Rights',
-    description:
-      'Many citizens believe in the importance of protecting and expanding voting rights, but political action is frequently impeded by partisan interests. Long-term implications include diminished democratic participation, potential disenfranchisement, and erosion of public trust in governance.'
+    id: 'justice-reform',
+    title: 'Criminal Justice Reform',
+    description: `<em>Public Consensus:</em> Many Americans advocate for reforms such as reducing mandatory minimum sentences and addressing racial disparities in policing.
+    <br>
+    <em>Policy Gap:</em> While some local reforms have occurred, comprehensive federal legislation has struggled to gain traction amidst political polarization.`
   },
   {
     id: 'infrastructure-investment',
     title: 'Infrastructure Investment',
-    description:
-      'There is a general consensus on the need for significant investment in infrastructure, yet political gridlock often prevents action. Long-term implications include deteriorating public services, economic inefficiency, and potential safety hazards.',
-  }, 
+    description: `<em>Public Consensus:</em> A strong majority supports increased funding for infrastructure projects, including roads, bridges, and public transit.
+    <br>
+    <em>Policy Gap:</em> Legislative efforts can be stalled by budgetary concerns and disagreements over funding sources.`
+  },
+  {
+    id: 'immigration-reform',
+    title: 'Immigration Reform',
+    description: `<em>Public Consensus:</em> Many Americans support a pathway to citizenship for undocumented immigrants and comprehensive immigration reform.
+    <br>
+    <em>Policy Gap:</em> Political gridlock and differing opinions on enforcement versus humanitarian approaches have stalled progress.`
+  },
+  {
+    id: 'family-leave',
+    title: 'Paid Family Leave',
+    description: `<em>Public Consensus:</em> A significant portion of the public supports paid family leave policies for new parents and caregivers.
+    <br>
+    <em>Policy Gap:</em> Legislative efforts have faced challenges in terms of funding and opposition from some business groups concerned about potential costs.`
+  },
+  {
+    id: 'voting-rights',
+    title: 'Voting Rights',
+    description: `<em>Public Consensus:</em> There is broad support for measures to protect and expand voting access, such as automatic voter registration and eliminating voter ID laws.
+    <br>
+    <em>Policy Gap:</em> Legislative initiatives have been blocked by partisan disputes and concerns over election integrity.`
+  },
+  {
+    id: 'minimum-wage',
+    title: 'Minimum Wage Increase',
+    description: `<em>Public Consensus:</em> A majority of Americans support raising the federal minimum wage to address living costs and economic inequality.
+    <br>
+    <em>Policy Gap:</em> Efforts to raise the minimum wage have faced strong opposition in Congress, often framed around economic concerns and potential job losses.`
+  },
+  {
+    id: 'prescription-drug',
+    title: 'Prescription Drug Pricing',
+    description: `<em>Public Consensus:</em> Many Americans favor policies aimed at reducing prescription drug prices and increasing transparency.
+    <br>
+    <em>Policy Gap:</em> Legislative measures have stalled due to lobbying by pharmaceutical companies and debates over the best approach to price regulation.`
+  },
+
   // The following are Current Events questions 
+  // Important, the topic below must always be #11 (#10 in array)
   {
-    id: 'artificial-intelligence',
-    title: 'Artificial Intelligence',
+    id: 'utility-costs',
+    title: 'Rising Utility Costs',
     description:
-      'Rapid deployment of generative AI has raised concerns about workforce displacement, misinformation, and the lack of clear regulatory guardrails.',
+      'Rising utility rates and energy costs, with average utility bills rising over 10 percent in 2025 alone, emerging as a major electoral issue that has influenced state and local elections.',
   },
   {
-    id: 'insurance-affordability',
-    title: 'Insurance Affordability',
+    id: 'government-corruption',
+    title: 'Government Corruption Concerns',
     description:
-      'Rising home and auto insurance premiums, especially in disaster-prone regions, have become a major household cost concern and a policy challenge for states.',
+      'Government corruption as a top public worry, with 54 percent of Americans reporting significant concern, alongside worries about disruption of federal government services. Yale Program on Climate Change Communication',
   },
   {
-    id: 'election-administration',
-    title: 'Election Administration',
+    id: 'homeowners-insurance',
+    title: 'Homeowners Insurance Market Crisis',
     description:
-      'Ongoing debates focus on election security, ballot access, and the capacity of state and local systems to manage high-turnout elections.',
+      'Homeowners insurance market crisis, with insurers pulling back from disaster-prone states, leaving homeowners without adequate protection sources in California, Florida, and other areas.',
   },
   {
-    id: 'housing-affordability',
-    title: 'Housing Affordability',
+    id: 'federal-ai-regulation',
+    title: 'Federal-State AI Regulation Conflict',
     description:
-      'Elevated interest rates, housing shortages, and reassessments have intensified public pressure for near-term housing and tax relief measures.',
+      'Federal-state conflict over AI regulation, with multiple state AI laws taking effect January 1, 2026, while the Trump administration signed an executive order in December 2025 to challenge and preempt state AI regulations.',
   },
   {
-    id: 'supply-chain',
-    title: 'Supply Chain',
+    id: 'food-safety',
+    title: 'Food Safety and Dietary Regulations',
     description:
-      'Recent disruptions and geopolitical risks have renewed attention on reshoring, critical materials, and industrial policy effectiveness.',
+      'Food safety and dietary regulations including state-level bans on certain food dyes (75 bills in 37 states in 2025), fluoride restrictions, and limitations on food stamp purchases for certain unhealthy products.',
   },
   {
-    id: 'energy-grid',
-    title: 'Energy Grid',
+    id: 'medicaid-coverage',
+    title: 'Medicaid Coverage Losses and Healthcare Premiums',
     description:
-      'Extreme weather events have exposed vulnerabilities in aging energy infrastructure, prompting concern over reliability and preparedness.',
+      'State Medicaid coverage losses and healthcare premium spikes, with the Urban Institute estimating 6 million Americans in expansion states could lose coverage in 2026 following federal funding changes.',
   },
   {
-    id: 'data-privacy',
-    title: 'Data Privacy',
+    id: 'school-funding',
+    title: 'School Funding and Education Culture Wars',
     description:
-      'High-profile breaches and expanded data collection by platforms have increased demand for stronger privacy standards and enforcement.',
+      'School funding and education culture wars, with federal and state policy debates over public school funding, transgender student rights, parental curriculum input, and DEI initiatives amid ongoing teacher shortages.',
+  }, 
+  {
+    id: 'stateof-democracy',
+    title: 'State of Democracy and Cultural Divisions',
+    description:
+      'Concerns about the state of democracy and cultural/social divisions, with 44 percent and 36 percent of Americans respectively reporting significant worry about these issues.',
   },   
-  // The following are politician question
   {
+    id: 'budget-crises',
+    title: 'State and Federal Budget Crises',
+    description:
+      'State and federal budget crises triggered by federal tax policy changes, with Colorado and other states experiencing unexpected revenue shortfalls requiring emergency legislative sessions to address funding gaps.',
+  },
+  {
+    id: 'ai-insurance-regulation',
+    title: 'AI Insurance Regulation',
+    description:
+      'AI insurance regulation emerging as a priority, with bipartisan concern from state lawmakers about how AI affects insurance markets and pricing, particularly for homeowners and property insurance.',
+  }   
+  // The following are politician question
+  /*{
     id: 'politician',
     title: 'Data Privacy',
     description:
       'Politicians that champion specific causes.',
-  }           
+  } */         
 ];

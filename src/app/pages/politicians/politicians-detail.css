@@ -1,7 +1,8 @@
+
 .main-container {
-    min-height: 65vh;
+    min-height: 80vh;
     width: 96%;
-    padding: 20px;
+    padding: 5px;
 }
 
 .answer-bubble {
@@ -38,7 +39,7 @@
 }
 
 .question-text{
-  color: rgb(231, 171, 3);
+  color:#C08331; 
   font-size: 18px; 
 }
 
@@ -58,6 +59,7 @@
 
 .solution-text {
   margin-bottom: 0.25rem;
+  white-space: preline;
 }
 
 .solution-text.numbered {

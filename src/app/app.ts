@@ -5,7 +5,7 @@ import { TopicContextService } from './services/topic-context.service';
 import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Signal } from '@angular/core';
-import { Topic } from './data/topics';
+import { CurrentTopicState } from './services/topic-context.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +25,7 @@ export class AppComponent {
   isDonateActive = false;
 
   // ✅ Now matches mapped output
-  currentTopic!: Signal<Topic | null>;
+  currentTopic!: Signal<CurrentTopicState | null>;
 
   constructor(
     private topicContext: TopicContextService,
@@ -33,6 +33,11 @@ export class AppComponent {
   )
   {
     this.currentTopic = toSignal(this.topicContext.topic$, { initialValue: null });
+    this.router.events.subscribe(event => {
+    if (event instanceof NavigationEnd) {
+      window.scrollTo(0, 0);
+    }
+  });
   }
 
   ngOnInit() {
@@ -40,15 +45,14 @@ export class AppComponent {
       .pipe(filter(e => e instanceof NavigationEnd))
       .subscribe(() => {
         const route = this.router.routerState.root.firstChild;
-        //console.log("ROUTE:", route);
         const section = route?.snapshot.data['section'];
 
         // Reset all flags first (important)
         this.resetActiveFlags();
-        console.log("section:", section, ":");
+
+        const state = history.state;
 
         if (section !== 'topic') {
-          console.log("SETTING:", section);
           this.isLowHangingFruitActive = section === 'low-hanging-fruit';
           this.isStateBoardActive = section === 'state-board';
           this.isCurrentEventsActive = section === 'current-board';
@@ -59,8 +63,14 @@ export class AppComponent {
         }
 
         // section === 'topic' → derive from query param
-        const from = route?.snapshot.queryParamMap.get('from');
-        console.log("SETTING2:", from);
+        let from = '';
+
+        if (state?.from) {
+          from = state.from;
+        } else {
+          from = route?.snapshot.queryParamMap.get('from') ?? '';
+        }
+        
         this.isLowHangingFruitActive = from === 'low-hanging-fruit';
         this.isStateBoardActive = from === 'state-board';
         this.isCurrentEventsActive = from === 'current-board';

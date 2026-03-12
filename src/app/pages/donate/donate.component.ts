@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['donate.component.css']
 })
 export class DonateComponent {
-  venmoName = '@AIPresident'
+  venmoName = 'The-AI-President'
 }

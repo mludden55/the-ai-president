@@ -1,22 +1,24 @@
 <div class="app-container">
   <div class="tabs-wrapper">
     <div class="tabsTitle">The AI President</div>
-
     <nav class="tabs">
       <a routerLink="/story" routerLinkActive="active">The Story</a>
       <a routerLink="/low-hanging-fruit" [class.active]="isLowHangingFruitActive">The Big Board</a>
       <a routerLink="/current-events" [class.active]="isCurrentEventsActive">Current Events</a>
       <a routerLink="/state-board" [class.active]="isStateBoardActive">State Issues</a>
       <a routerLink="/contact-us" [class.active]="isContactUsActive">Contact Us</a>
-      <a routerLink="/donate" [class.active]="isDonateActive">Donate</a>
+      <a routerLink="/donate" [class.active]="isDonateActive">Donate</a>    
     </nav>
-
-    @if (currentTopic()) {
-      <div class="sub-menu">
-        {{ currentTopic()?.subTopic }} - {{ currentTopic()?.title }}
-      </div>
-    }
+    
   </div>
+
+  @if (currentTopic()) {
+  <div class="sub-menu">
+    <div class="sub-menu">
+      {{ currentTopic()?.subTopic }} - {{ currentTopic()?.title }}
+    </div>
+  </div>
+  }
 
   <main class="content">
     <router-outlet></router-outlet>

@@ -35,7 +35,6 @@ export class ContactUsComponent  {
   constructor(private router: Router, private http: HttpClient) {}
 
   submit() {
-    console.log("MODEL:", this.model);
     this.http.post(
       'https://de6z90hmxf.execute-api.us-west-2.amazonaws.com/Prod/contact',
       this.model
@@ -48,16 +47,13 @@ export class ContactUsComponent  {
   }
 
   onEmailChange(value: string) {
-    console.log("INPUT:", value);
     this.emailSuggestion = this.getSuggestion(value);
   }
 
   private getSuggestion(email: string): string | null {
-    console.log("Start:", email);
     if (!email || !email.includes('@')) return null;
-    console.log("Start:", email);
     const [localPart, domain] = email.split('@');
-    console.log("domain:", domain);
+
     if (!domain) return null;
 
     let closestDomain: string | null = null;
@@ -70,8 +66,6 @@ export class ContactUsComponent  {
         closestDomain = common;
       }
     }
-
-    console.log("Start:", email);
 
     if (smallestDistance <= 2 && closestDomain !== domain) {
       return `${localPart}@${closestDomain}`;
@@ -104,7 +98,6 @@ export class ContactUsComponent  {
   }
 
   applySuggestion() {
-    console.log("applySuggestion",this.emailSuggestion);
     if (this.emailSuggestion) {
       this.model.email = this.emailSuggestion;
       this.emailSuggestion = null;

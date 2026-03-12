@@ -1,0 +1,123 @@
+<h2 style="text-align: center;">The AI President - A Short Story</h2>
+<div class="main-container">
+
+<strong>Sister: </strong>So, you are telling me that you could do a better job as President than all of those hopefuls out there, many who have spent much of their life in politics?
+
+<br><br><strong>Brother: </strong>Yes, I think it would be quite easy.
+
+<br><br><strong>Sister: </strong>O.k. I'll bite, what is your plan?
+
+<br><br><strong>Brother: </strong>I would be the first AI president.
+
+<br><br><strong>Sister: </strong>The first AI president? O.k. I am intrigued. Give me your introductory speech.
+
+<br><br><strong>Brother: </strong>It would go something like this:
+"Hello my fellow Americans, my name is Andy I Prescott, and I want to be your first AI president.
+
+First, I want to acknowledge that AI can be used for bad intentions. Bad people can use it to do bad things.... and if elected president, I can assure you that I will use the powers of the government and AI to protect the people to the best of my ability."
+
+<br><br><strong>Sister: </strong>And exactly how are you going to protect the people?
+
+<br><br><strong>Brother: </strong>There are lot's of ways. For instance, online and phone scams are pretty common in our lives these days. I get emails all the time that are obviously a scam and include a phone number to call. Those phone numbers and emails could be tracked as scams within a matter of hours using the power of AI. They should be shut down and the criminals behind them should be prosecuted.
+ We can use AI to track those scams down faster, saving a lot of people a lot of time and money...... but we are getting off track, can I finish my speech?
+
+<br><br><strong>Sister: </strong>Why of course, please continue Mr. Presidential hopeful.
+
+<br><br><strong>Brother: </strong>So after acknowledging the dangers I would go right in to explaing how we can use it to our benefit. I would say something like:
+ "Having said that, AI gives us the ability to transform our society in a life changing manner.
+
+<br><br>Let me first explain AI in a simple way that most people can understand. Basically, you can ask AI questions and it takes all of the data it has collected and sorts through that data in a 'supposedly' non-partisian manner to give you the best answer.
+ To get a more complete answer, ask AI yourself: <span class="question-text">{{storyQuestions[0]}}".</span>
+
+<div class="question-block">
+  <div class="question-content">
+    <br>
+    <question-widget
+      [questionId]="0">
+    </question-widget>
+  </div> 
+</div>
+
+<strong>Sister: </strong>Why did you put up "bunny ears" when you said supposedly?
+
+<br><br><strong>Brother: </strong>Because it is difficult to know for sure that a particular AI company does not have a 'partisian lean' one way or the other. That is why I included the ability to ask other well known AI sites on my demo site.
+ Eventually, I would like to combine the answers from various AI sites to provide 'consensus' answers, but for now I am just integrating Claude with my website.
+ AI helped me come up with various questions that are displayed on my demo site, and actually suggested I word certain questions in certain ways in order to keep it non-partisian. 
+<br><br>
+... back to my speech, I would then explain the website and it's purpose. I would say "What I want to do is use AI to solve problems. If elected president, I would create a website that shares the most important issues and provides the ability for all registered voters to 'vote' on various proposed solutions.
+
+<br><br>
+<strong>Sister: </strong>O.k. hold on, so you are going to create a website where all registered voters can have a say. How are you going to control the voting?
+
+<br><br><strong>Brother: </strong> Yeah, that is actually a tricky one. I hear a lot of noised out there regarding election security. 
+It is my understanding that States control their election data, so it would have to integrate with existing state laws and procedures.
+Here is what Claude has to say when I asked: <span class="question-text">{{storyQuestions[1]}}</span>
+
+<div class="question-block">
+  <div class="question-content">
+    <br>
+    <question-widget
+      [questionId]="1">
+    </question-widget>
+  </div> 
+</div>
+Or maybe it would be a simple tie in with Social Security ID's... or something like that.
+
+<br><br>For now, my demo is not secure at all. I do not require a login and only restrict voting by IP address, so there are lots of ways people can vote more than once..... this is just to give people an idea of the possibilities.
+I would ultimately like to require a login that is tied to the approved identification process. This way, we could get a very accurate read on what the citizens want.
+If you want to check out more information on voting rights check out #8 on the Big Board on my demo site.
+
+<br><br><strong>Sister: </strong>Big Board? What is that?
+
+<br><br><strong>Brother: </strong>
+That takes me back to my speech. "To enable citizens of this country to have a better say in the decisions that politicians are making, I will create a website that will allow you to provide input into the laws and decisions that we pass. It would work like this:
+<ol>
+  <li>First, we will have a 'Big Board'. This will provide a list of issues where there is general agreement that changes are needed, but for various reasons.... primarily big money donors swaying things their way, the laws and changes that need to be made are not happening. I consider this "Low Hanging Fruit", where we should be picking from the tree, but are not.</li>
+  <li>Next, from the list of issues the user can click a link that will show proposed solutions. This is where it starts to get fun. The citizens can then rate the proposed solutions on a scale of 1-10. 1 means they love the idea and thinks action should be taken and 10 means they do not think it is a good solution.</li>
+  <li>Finally, once we have ranked solutions for issues that the voters are in agreement on, it will be up to the politicians to step up and create laws that can be voted on during regular elections."
+</ol>
+
+We will implement these solutions, be it passing new laws, earmarking taxpayer dollars, or whatever it takes to make the lives of ordinary citizens better.
+<br><br>From the list of proposed solutions, you can also click on a link to see which politicians are championing specific causes.
+<br><br>In addition to the Big Board, the site will also have a 'Current Events' board. This will share topics that are more current, where the AI data may not have a deep enough knowledge base yet for them to bubble up to the Big Board, but are issues that Americans are concerned about.
+
+<br><br><strong>Sister: </strong>Hmm, sounds interesting. Are there any issues that you are suprised did not show up on either the Big Board or Current Events board?
+<br><br>
+<strong>Brother: </strong>One issue that jumps out at me is the topic of Gerrymandering. While this has been going on every 10 years for some time, the most recent back and forth has been quite frustrating. Think of all of the time and monetary resources wasted doing this, when they should be focusing on delivering to the people.
+
+<br><br>Here is what Claude had to say when I asked if people agree with me: <span class="question-text">{{storyQuestions[2]}}</span>
+
+<div class="question-block">
+  <div class="question-content">
+    <br>
+    <question-widget
+      [questionId]="2">
+    </question-widget>
+  </div> 
+</div>
+
+In my mind, the concept in general seems to be that the side that has the most power at the time, get's the best opportunity to cheat in the next election. 
+<br><br>I feel like we need to settle the matter once and for all. Use statistics based analisys, to create maps that all states must ahdere to. I am not entirely sure, but maybe something like breaking up each state into 10 population areas. It gets complicated when you bring urban vs. rural into the picture, but let's bring some common sense to the process.
+<br><br>I do not have a deep enough knowledge to provide a real informed opinion on it, but that is my take on it. Perhaps I will dive deeper into the subject if I decide to write a Chapter 2!
+<br><br>Back to the website, in addition to the "The Big Board" board and "Current Events" board, there will also be a "State Issues" board. This will allow for drilling down on state specific issues. Again, not much security on my demo, but the idea would be that only state residents can vote on state specific issue.
+<br><br>If the site ends up being successful, I would like to even drill down to the city/county level and perhaps even allow universities to have their own boards..... but I digress.
+
+<br><br><strong>Sister: </strong>This all sounds very intriguing. I think I like it. One more question, is there anything you that has popped on your demo site that you feel strongly about?
+
+<br><br><strong>Brother: </strong>Well, suffice to say I feel strongly about a lot of the issues. However, the one that really jumps out is healthcare. That is the one topic that of all the great things this country has achieved, we have really gone backwards and are so far behind most of the world in terms of affordibility and accessibility.
+
+Back to the speech: 
+<br><br>
+The concept is that as we take care of certain problems they will drop off of the big board and be replaced by new issues that arise over the course of time.
+
+Oh yeah, I also want to explain how the website works with AI over time. For each of the boards, The Big Board, Current Events and State issues the issues shared will remain constant over the course of a year. Right around election time, we will "reset" the boards by asking the general question from Claude... or other AI sites. The solutions and votes, however, will automatically reset on the first of each month.
+"So, one year from the beginning of my presidency, I want the politicians to have actual laws ready to be voted on by you, the people.
+<br><br>
+
+<br><br><strong>Sister: </strong>Sounds good. What about your closing statement?
+<br><br><strong>Brother: </strong>Ha! Ha! O.k. "In conclusion, I am Andy I Prescott and I want to be your first AI president! Thank you for your attention.
+
+</div>
+
+
+
