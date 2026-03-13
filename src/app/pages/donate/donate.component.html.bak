@@ -1,0 +1,45 @@
+
+
+<div class="common-container"> 
+     
+        <h2>Support Our Work</h2>        
+        <span>
+          The AI President started as a simple question: what if citizens actually had a say?
+          <br><br>
+          This site is an independent passion project — no corporate backing, no political donors, no agenda. Just one person exploring how AI and technology might finally give everyday Americans a real voice in the decisions that affect their lives.
+          <br><br>  
+          If that idea resonates with you, consider buying us a coffee. Every contribution helps keep the site running, the ideas flowing, and the Big Board growing.
+          <br><br>
+          Thank you for believing in the conversation.
+          <br><br>
+          — The-AI-President.com
+        </span>
+        <br>
+
+        <ul class="donation-levels">
+          <li>$3 - Buy a coffee</li>
+          <li>$10 - Help fund new features</li>
+          <li>$25 - Support the project long-term</li>
+        </ul>
+        
+        <div class="payment-option">
+          <h3>Donate with Venmo</h3>
+          <p>Scan this QR code using the Venmo app:</p>
+
+          <img
+            src="/assets/images/venmo_qrcode.jpg"
+            alt="Venmo QR Code"
+            class="venmo-qr"
+          />
+
+          <a class="venmo-button" href="https://account.venmo.com/u/The-AI-President" target="_blank">
+            Donate via Venmo
+          </a>
+
+          <p><strong>Or make a payment to: {{venmoName}}</strong></p>
+        </div>
+
+  </div>
+
+
+

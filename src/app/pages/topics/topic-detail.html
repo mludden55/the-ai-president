@@ -76,14 +76,13 @@
     </div>  
 
     @if (topic.id.startsWith('state-')) {
-      <p>
-        Rate the concerns below on a scale of 1 to 10! 1 is your biggest concern, 10 is your smallest concern.<br><span class="redTextItal">Each rating score can only be used once.</span>
+      <p style="font-style: italic;">
+        Rate the concerns below on a scale of 1 to 10! 1 is your biggest concern, 10 is your smallest concern.<br>
       </p> 
     }
     @else{
       <p style="font-style: italic;">
         <span style="font-weight: bold;">Rate the proposed solutions below on a scale of 1 to 10! 1 is your favorite solution, 10 is your least favorite solution.</span>
-        <br><span class="redTextItal">Each rating score can only be used once.</span>
       </p>  
     } 
     <hr />
@@ -107,14 +106,28 @@
 
               <!-- Footer: Voting + Stats -->
               <div class="solution-footer">
-                <!-- Voting Control -->
-                <div class="solution-voting">
-                  <app-vote-widget
-                    [questionId]="topic.id + '-' + i"
-                    [userVote]="userVotes[i]"
-                    [initialValue]="solution.initialValue"
-                    (voted)="onVote(tableName, topic.id, i, $event)">
-                  </app-vote-widget>
+                <div class="vote-container">
+                  <div class="solution-voting">
+                    <app-vote-widget
+                      [questionId]="topic.id + '-' + i"
+                      [userVote]="userVotes[i]"
+                      [initialValue]="solution.initialValue"
+                      (voted)="onVote(tableName, topic.id, i, $event)">
+                    </app-vote-widget>
+                  </div>
+
+                  @if (topic.id.startsWith('state-')) {
+                    <div class="vote-label-row">
+                      <span>Concerned</span>
+                      <span>Least Concerned</span>
+                    </div>
+                  }
+                  @else {
+                    <div class="vote-label-row">
+                      <span>Favorite</span>
+                      <span>Least Favorite</span>
+                    </div>
+                  }
                 </div>
 
                 <!-- Stats + Distribution -->

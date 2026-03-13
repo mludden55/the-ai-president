@@ -196,6 +196,17 @@
   margin-top: 4px;
 }
 
+.vote-container {
+  width: fit-content;
+}
+
+.vote-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 .questions {
   overflow-x: hidden;
 }

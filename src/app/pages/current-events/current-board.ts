@@ -27,6 +27,8 @@ export class CurrentBoard {
     Focus on current or evolving issues rather than long-standing debates. Do not include the following topics: Gun Control, Climate Change, Healthcare Access, Criminal Justice Reform, Infrastructure Investment, Immigration Reform, Paid Family Leave, Voting Rights, Minimum Wage Increase, Prescription Drug Pricing.
     Provide 6-10 concise items with brief explanations.
     Return the response as a numbered list only.`;
+  shareLink1Display = `Based on recent news coverage, legislative activity, and public opinion data from the past 3-12 months, what political or policy issues have emerged as major public concerns in the United States?
+    Focus on current or evolving issues rather than long-standing debates.`;  
   // Do not include the following topics: Gun Control, Climate Change, Healthcare Access, Criminal Justice Reform, Infrastructure Investment, Immigration Reform, Paid Family Leave, Voting Rights, Minimum Wage Increase, Prescription Drug Pricing   
   linkCopied:  { [key: number]: boolean } = {};
 

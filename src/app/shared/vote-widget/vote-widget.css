@@ -11,18 +11,16 @@
 }
 
 .vote-btn-wrapper-container {
-  display: flex;            /* arrange children horizontally */
-  flex-direction: row;      /* horizontal row */
-  justify-content: center;  /* center all buttons */
-  gap: 8px;                 /* horizontal spacing between buttons */
-  vertical-align: top;
-}
-
-.vote-btn-wrapper-container {
   display: flex;
   justify-content: center;
   gap: 8px;
-  align-items: flex-start;
+}
+
+.vote-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .vote-label {
@@ -33,12 +31,6 @@
 }
 
 
-.vote-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  text-align: center;
-}
 
 @media (max-width: 768px) {
   .vote-btn-wrapper-container {
