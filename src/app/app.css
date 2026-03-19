@@ -6,6 +6,57 @@ html, body {
   height: 100%;
 }
 
+
+
+/* ══ HEADER OPTION A ══ */
+.header-top {
+  background: #2d5a4a;
+  padding: 10px 24px;
+  text-align: center;
+  border-bottom: 2px solid #c9a84c;
+
+}
+
+.header-title {
+  color: #e8c46a;
+  font-style: italic;
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: 0.02em;
+  font-family: Georgia, serif;
+}
+
+.header-nav {
+  background: #2d5a4a;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.header-nav a {
+  color: #d4c9a8;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.header-nav a:hover {
+  color: #fff;
+  border-bottom-color: rgba(201, 168, 76, 0.5);
+}
+
+.header-nav a.active {
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid #c9a84c;
+}
+
+
+
 .app-container {
   background-image: url('assets/images/background_whitehouse.png');
   background-size: cover;
@@ -31,6 +82,7 @@ html, body {
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255,255,255,0.08);
+      width: 40%;
 }
 
 .tabs {

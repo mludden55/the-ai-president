@@ -5,8 +5,7 @@
   <!-- Question block -->
   <div class="question-block">
     <span class="boldText">We asked Claude:</span>
-    <p class="question-text" style="margin-top: 8px;">{{shareLink1Display}}</p>
-	  <span class="redTextItal">Note that question also excluded topics already addressed on The Big Board board.</span>
+    <p class="question-text" style="margin-top: 8px;">{{shareLink1}}</p>
 
     <div class="question-actions">
       <div class="actions-left">
@@ -47,8 +46,8 @@
 
     @for (topics of topics11to20; track topics; let i = $index) {
       <div style="margin-top: 20px;">
-        
-        <h3 class="question-title"><span class="question-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span> {{ topics11to20[i].title }}</h3>
+        <span class="question-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+        <h3 class="question-title">{{ topics11to20[i].title }}</h3>
 
         <div>{{topics11to20[i].description}}</div>
 

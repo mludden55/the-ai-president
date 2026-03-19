@@ -1,8 +1,11 @@
 <div class="app-container">
   <div class="tabs-wrapper">
-    <div class="tabsTitle">The AI President</div>
 
-    <nav class="tabs">
+    <div class="header-top">
+      <div class="header-title">The AI President</div>
+    </div>
+
+    <nav class="header-nav">
       <a routerLink="/story" routerLinkActive="active">The Story</a>
       <a routerLink="/low-hanging-fruit" [class.active]="isLowHangingFruitActive">The Big Board</a>
       <a routerLink="/current-events" [class.active]="isCurrentEventsActive">Current Events</a>
@@ -16,6 +19,7 @@
         {{ currentTopic()?.subTopic }} - {{ currentTopic()?.title }}
       </div>
     }
+
   </div>
 
   <main class="content">

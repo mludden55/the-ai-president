@@ -223,19 +223,6 @@
 
 .questions {
   overflow-x: hidden;
-  margin-top: 0;          /* ensure no top margin */
-}
-
-.question-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-bottom: 28px;
-  background: #ffffff;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
-  padding: 24px 28px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 .question-text{
@@ -311,21 +298,6 @@
   line-height: 1.4;
 }
 
-.reply-intro {
-  padding: 12px 4px 0;    /* remove bottom padding */
-  margin-bottom: 0;       /* remove bottom margin */
-}
-
-
-
-.reply-instruction {
-  font-style: italic;
-  font-weight: 700;
-  margin: 8px 0 4px;
-  font-size: 15px;
-  color: #1a1a2e;
-}
-
 /* AI Pills */
 .ai-pill {
   display: inline-flex;
@@ -389,10 +361,6 @@
     margin-top: 12px;
   }
 
-  .question-block {
-    padding: 18px 16px;
-  }
-  
   /* Make copy button full width */
   .click-here-btn {
     width: 100%;

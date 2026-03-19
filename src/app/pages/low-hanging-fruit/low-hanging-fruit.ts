@@ -74,9 +74,11 @@ export class LowHangingFruitComponent {
 
   formatDescription(text: string): string {
     return text
-      .replace(/Public Consensus:/g, '<div class="desc-section"><strong>Public Consensus:</strong>')
-      .replace(/Policy Gap:/g, '</div><div class="desc-section"><strong>Policy Gap:</strong>')
-      + '</div>';
+      .replace(/\*?Public Consensus:\*?/g, 
+        '<p class="consensus-label">Public Consensus</p><p class="question-text">')
+      .replace(/\*?Policy Gap:\*?/g, 
+        '</p><p class="gap-label">Policy Gap</p><p class="question-text">')
+      + '</p>';
   }
 
   closeAnswer() {

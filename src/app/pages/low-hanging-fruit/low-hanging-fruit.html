@@ -1,53 +1,64 @@
 <h2 class="section-title">The Big Board</h2>
+
 <div class="main-container">
-<span class="boldText">We asked Claude: </span>
-<div class="question-block">
-  <div class="question-text">
-    {{shareLink1}}
-  </div>
-  <div class="question-actions">
-    <div class="actions-left">
-      <strong class="actions-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ask Other AI Sites</strong>
-      <button (click)="copyToClipboard(shareLink1,1)" class="click-here-btn">
-        Copy Question
-        @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
-      </button>
-      <div class="actions-note">
-        And paste into one of the sites:
+
+  <!-- Question block -->
+  <div class="question-block">
+    <span class="boldText">We asked Claude:</span>
+    <p class="question-text" style="margin-top: 8px;">{{shareLink1}}</p>
+
+    <div class="question-actions">
+      <div class="actions-left">
+        <span class="actions-title">Ask Other AI Sites</span>
+        <span class="actions-note">Copy, then paste into a site:</span>
+        <button (click)="copyToClipboard(shareLink1, 1)" class="click-here-btn">
+          Copy Question
+          @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
+        </button>
+      </div>
+
+      <div class="actions-right">
+        <a href="https://chat.openai.com/" target="_blank" class="ai-pill">
+          <span class="ai-dot ai-dot--chatgpt"></span>ChatGPT
+        </a>
+        <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill">
+          <span class="ai-dot ai-dot--perplexity"></span>Perplexity
+        </a>
+        <a href="https://gemini.google.com/app" target="_blank" class="ai-pill">
+          <span class="ai-dot ai-dot--gemini"></span>Gemini
+        </a>
+        <a href="https://grok.com/" target="_blank" class="ai-pill">
+          <span class="ai-dot ai-dot--grok"></span>Grok
+        </a>
+        <a href="https://www.meta.ai/" target="_blank" class="ai-pill">
+          <span class="ai-dot ai-dot--metaai"></span>Meta AI
+        </a>
+        <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill">
+          <span class="ai-dot ai-dot--copilot"></span>Copilot
+        </a>
       </div>
     </div>
-    <div class="actions-right">
-      <a href="https://chat.openai.com/" target="_blank" class="ai-pill">
-        💬 ChatGPT
-      </a>
-      <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill">
-        🔎 Perplexity
-      </a>
-      <a href="https://gemini.google.com/app" target="_blank" class="ai-pill">
-        ✨ Gemini
-      </a>
-      <a href="https://grok.com/" target="_blank" class="ai-pill">
-        🚀 Grok
-      </a>
-      <a href="https://www.meta.ai/" target="_blank" class="ai-pill">
-        🧠 Meta AI
-      </a>
-      <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill">
-        🤖 Copilot
-      </a>
-    </div>
   </div>
-</div>
 
-<div>
+  <!-- Claude's reply -->
+  <div class="question-block">
+    <span class="boldText">Claude replied with the following:</span>
 
-<span class="boldText">Claude replied with the following:</span>
-  <br><br>
- @for (topics of topics1to10; track topics; let i = $index) {
-    <strong>{{i+1}}. {{topics1to10[i].title}}</strong>
-    <br><span [innerHTML]="formatDescription(topics1to10[i].description)"></span>
+    @for (topics of topics1to10; track topics; let i = $index) {
+      <div style="margin-top: 20px;">
+        
+        <h3 class="question-title"><span class="question-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span> {{ topics1to10[i].title }}</h3>
 
-    <a [routerLink]="['/topic', topics1to10[i].id]" [queryParams]="{ from: 'low-hanging-fruit' }"><br>See Solutions Related to {{topics1to10[i].title}}</a>
-    <br><br>
- }
+        <div [innerHTML]="formatDescription(topics1to10[i].description)"></div>
+
+        <hr class="question-divider">
+        <a class="solutions-link"
+          [routerLink]="['/topic', topics1to10[i].id]"
+          [queryParams]="{ from: 'low-hanging-fruit' }">
+          See Solutions &rarr;
+        </a>
+      </div>
+    }
+  </div>
+
 </div>

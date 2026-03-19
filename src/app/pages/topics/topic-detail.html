@@ -1,184 +1,145 @@
 <div class="main-container">
-@if (topic) {
-  @if (loadingSolutions) {
-    @if (topic.id.startsWith('state-')) {
-      <div class="loading">Loading State Concerns…@if (showPatienceMessage){This can take a few seconds.}</div>
-      @if (showLoadError){<div class="text-red"><br>Error loading concerns. Please try again later.</div>}
-    }
-    @else{
-      <div class="loading">Loading Solutions…@if (showPatienceMessage){This can take a few seconds.}</div> 
-      @if (showLoadError){<div class="text-red"><br>Error loading solutions. Please try again later.</div>}   
-    }
-    
-  }
-  @else {
-    
-    <p>
-      <span class="boldText">We asked Claude:</span>
-    </p>
-    <div class="question-block">
-      <div class="question-text">
-        {{questionAsked}}
-      </div>
-
+  @if (topic) {
+    @if (loadingSolutions) {
       @if (topic.id.startsWith('state-')) {
-        <div class="question-actions">
-          <div class="actions-left">
-            <strong class="actions-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ask Other AI Sites</strong>
-            <button
-              (click)="copyToClipboard(questionAsked!, 1)"
-              class="click-here-btn">
-              Copy Question @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
-            </button>
+        <div class="loading">Loading State Concerns… @if (showPatienceMessage){ This can take a few seconds. }</div>
+        @if (showLoadError){ <div class="text-red"><br>Error loading concerns. Please try again later.</div> }
+      } @else {
+        <div class="loading">Loading Solutions… @if (showPatienceMessage){ This can take a few seconds. }</div>
+        @if (showLoadError){ <div class="text-red"><br>Error loading solutions. Please try again later.</div> }
+      }
+    } @else {
 
-            <div class="actions-note">
-              And paste into one of the sites:
+      <!-- Question block -->
+      <div class="question-block">
+        <span class="boldText">We asked Claude:</span>
+        <p class="question-text" style="margin-top: 8px;">{{ questionAsked }}</p>
+
+        @if (topic.id.startsWith('state-')) {
+          <div class="question-actions">
+            <div class="actions-left">
+              <span class="actions-title">Ask Other AI Sites</span>
+              <span class="actions-note">Copy, then paste into a site:</span>
+              <button (click)="copyToClipboard(questionAsked!, 1)" class="click-here-btn">
+                Copy Question
+                @if (linkCopied[1]) { <span class="text-red">Copied!</span> }
+              </button>
+            </div>
+            <div class="actions-right">
+              <a href="https://chat.openai.com/" target="_blank" class="ai-pill"><span class="ai-dot ai-dot--chatgpt"></span>ChatGPT</a>
+              <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill"><span class="ai-dot ai-dot--perplexity"></span>Perplexity</a>
+              <a href="https://gemini.google.com/app" target="_blank" class="ai-pill"><span class="ai-dot ai-dot--gemini"></span>Gemini</a>
+              <a href="https://grok.com/" target="_blank" class="ai-pill"><span class="ai-dot ai-dot--grok"></span>Grok</a>
+              <a href="https://www.meta.ai/" target="_blank" class="ai-pill"><span class="ai-dot ai-dot--metaai"></span>Meta AI</a>
+              <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill"><span class="ai-dot ai-dot--copilot"></span>Copilot</a>
             </div>
           </div>
-          <div class="actions-right">
-            <a href="https://chat.openai.com/" target="_blank" class="ai-pill">
-              💬 ChatGPT
-            </a>
-            <a href="https://www.perplexity.ai/" target="_blank" class="ai-pill">
-              🔎 Perplexity
-            </a>
-            <a href="https://gemini.google.com/app" target="_blank" class="ai-pill">
-              ✨ Gemini
-            </a>
-            <a href="https://grok.com/" target="_blank" class="ai-pill">
-              🚀 Grok
-            </a>
-            <a href="https://www.meta.ai/" target="_blank" class="ai-pill">
-              🧠 Meta AI
-            </a>
-            <a href="https://copilot.microsoft.com/" target="_blank" class="ai-pill">
-              🤖 Copilot
-            </a>
-          </div>
-        </div>
-        <p>
-          <span class="boldText">The answers are below.</span>
-          <br>
-          <span class="redTextItal">
+        }
+      </div>
+
+      <!-- Claude reply intro — outside the card, no padding gap -->
+      <div class="reply-intro">
+        <span class="boldText">Claude replied with the following:</span>
+
+        @if (topic.id.startsWith('state-')) {
+          <p class="reply-instruction">
+            Rate the concerns below on a scale of 1 to 10! 1 is your biggest concern, 10 is your smallest concern.
+          </p>
+          <p class="redTextItal">
             Note that all concern answers and related votes will be cached for 1 month. On the first of each month, the votes will be cleared and we will re-ask Claude the same question.
-          </span> 
-        </p>   
-      }
-      @else{
-        <p>
-          <span class="boldText">The answers are below.</span>
-          <br>
-          <span class="redTextItal">
+          </p>
+        } @else {
+          <p class="reply-instruction">
+            Rate the proposed solutions below on a scale of 1 to 10! 1 is your favorite solution, 10 is your least favorite solution.
+          </p>
+          <p class="redTextItal">
             Note that all solutions and related votes will be cached for 1 month. On the first of each month, the votes will be cleared and we will re-ask Claude the same question.
-          </span> 
-        </p>
-      }
-    </div>  
+          </p>
+        }
+      </div>
 
-    @if (topic.id.startsWith('state-')) {
-      <p style="font-style: italic;">
-        Rate the concerns below on a scale of 1 to 10! 1 is your biggest concern, 10 is your smallest concern.<br>
-      </p> 
-    }
-    @else{
-      <p style="font-style: italic;">
-        <span style="font-weight: bold;">Rate the proposed solutions below on a scale of 1 to 10! 1 is your favorite solution, 10 is your least favorite solution.</span>
-      </p>  
-    } 
-    <hr />
+      <!-- Solutions -->
+      <div class="questions">
+        @if (solutions.length > 0) {
+          <span class="solutions">
+            @for (solution of solutions; track solution; let i = $index) {
+              @if (!solution.text.startsWith('###')) {
+                <div class="question-block" [style.margin-top]="i > 0 ? '4px' : '2px'">
+                  <h3 class="question-title">
+                    <span class="question-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+                    {{ solution.title }}
+                  </h3>
 
-    <div class="questions">
-      @if (solutions.length > 0) {
-        <!--  <div class="solution-text">{{ solutionTitle }}</div> -->       
-        <span class="solutions">
-          @for (solution of solutions; track solution; let i = $index) {
-            @if (!solution.text.startsWith('###')) {
-              <!-- Solution Content -->
-              <div class="solution-text">
-                {{ solution.number }}. {{ solution.title }}:
-                @if (topic.id.startsWith('politicians')){
-                  <span class="solution-body-politician">{{ solution.text }}</span>
-                }
-                @else{
-                  <span class="solution-body">{{ solution.text }}</span>
-                }
-              </div>
-
-              <!-- Footer: Voting + Stats -->
-              <div class="solution-footer">
-                <div class="vote-container">
-                  <div class="solution-voting">
-                    <app-vote-widget
-                      [questionId]="topic.id + '-' + i"
-                      [userVote]="userVotes[i]"
-                      [initialValue]="solution.initialValue"
-                      (voted)="onVote(tableName, topic.id, i, $event)">
-                    </app-vote-widget>
-                  </div>
-
-                  @if (topic.id.startsWith('state-')) {
-                    <div class="vote-label-row">
-                      <span>Concerned</span>
-                      <span>Least Concerned</span>
-                    </div>
+                  @if (topic.id.startsWith('politicians')) {
+                    <span class="solution-body-politician">{{ solution.text }}</span>
+                  } @else {
+                    <span class="solution-body">{{ solution.text }}</span>
                   }
-                  @else {
-                    <div class="vote-label-row">
-                      <span>Favorite</span>
-                      <span>Least Favorite</span>
-                    </div>
-                  }
-                </div>
 
-                <!-- Stats + Distribution -->
-                <div class="solution-stats" *ngIf="solution.stats">
-                  <!-- Left: summary stats -->
-                  <div class="stats-summary">
-                    <div class="stat">
-                      <span class="label">Votes</span>
-                      <span class="value">{{ solution.stats.count }}</span>
-                    </div>
-
-                    <div class="stat">
-                      <span class="label">Avg</span>
-                      <span class="value">{{ getAverage(i) }}</span>
-                    </div>
-                  </div>
-
-                  <!-- Right: distribution chart -->
-                  <div class="distribution-wrapper">
-                    <div class="distribution-title">Distribution</div>
-
-                    <div class="distribution">
-                      @for (value of ratingScale; track value) {
-                        <div class="distribution-bar">
-                          <div class="bar-container">
-                            <div
-                              class="bar-fill"
-                              [style.height.%]="
-                                solution.stats.count
-                                  ? (solution.stats.distribution[value]) /
-                                    solution.stats.count * 100
-                                  : 0
-                              ">
-                            </div>
-                          </div>
-                          <span class="distribution-label">{{ value }}</span>
+                  <!-- Footer: Voting + Stats -->
+                  <div class="solution-footer">
+                    <div class="vote-container">
+                      <div class="solution-voting">
+                        <app-vote-widget
+                          [questionId]="topic.id + '-' + i"
+                          [userVote]="userVotes[i]"
+                          [initialValue]="solution.initialValue"
+                          (voted)="onVote(tableName, topic.id, i, $event)">
+                        </app-vote-widget>
+                      </div>
+                      @if (topic.id.startsWith('state-')) {
+                        <div class="vote-label-row">
+                          <span>Concerned</span>
+                          <span>Least Concerned</span>
+                        </div>
+                      } @else {
+                        <div class="vote-label-row">
+                          <span>Favorite</span>
+                          <span>Least Favorite</span>
                         </div>
                       }
                     </div>
+
+                    <div class="solution-stats" *ngIf="solution.stats">
+                      <div class="stats-summary">
+                        <div class="stat">
+                          <span class="label">Votes</span>
+                          <span class="value">{{ solution.stats.count }}</span>
+                        </div>
+                        <div class="stat">
+                          <span class="label">Avg</span>
+                          <span class="value">{{ getAverage(i) }}</span>
+                        </div>
+                      </div>
+                      <div class="distribution-wrapper">
+                        <div class="distribution-title">Distribution</div>
+                        <div class="distribution">
+                          @for (value of ratingScale; track value) {
+                            <div class="distribution-bar">
+                              <div class="bar-container">
+                                <div class="bar-fill"
+                                  [style.height.%]="solution.stats.count ? (solution.stats.distribution[value]) / solution.stats.count * 100 : 0">
+                                </div>
+                              </div>
+                              <span class="distribution-label">{{ value }}</span>
+                            </div>
+                          }
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <a [routerLink]="['/politician']" class="solutions-link"
+                    [state]="{ from: fromPage, topic: topic?.title, solutionTitle: solution.title, solution: getPoliticianSlug(solution.text) }">
+                    Click to see what politicians are championing this cause &rarr;
+                  </a>
                 </div>
-              </div>
-              <a [routerLink]="['/politician']"
-                [state]="{ from: fromPage, topic: topic.title, solutionTitle: solution.title, solution: getPoliticianSlug(solution.text) }"
-                >Click to see what politicians are championing this cause</a>              
-                <br><br>
+              }
             }
-          }
-        </span>
-      }
-    </div>
+          </span>
+        }
+      </div>
+
+    }
   }
-}
 </div>
